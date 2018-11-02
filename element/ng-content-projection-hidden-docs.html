@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>简单示例 | Angular 修仙之路</title>
+    <meta name="description" content="修炼 Angular、RxJS、TypeScript 秘籍">
+    
+    
+    <link rel="preload" href="/angular-god-road/assets/css/styles.4eaf616f.css" as="style"><link rel="preload" href="/angular-god-road/assets/js/app.4eaf616f.js" as="script"><link rel="preload" href="/angular-god-road/assets/js/4.ff267ab9.js" as="script"><link rel="prefetch" href="/angular-god-road/assets/css/1.styles.24fddc56.css"><link rel="prefetch" href="/angular-god-road/assets/css/2.styles.a2bd3099.css"><link rel="prefetch" href="/angular-god-road/assets/js/1.24fddc56.js"><link rel="prefetch" href="/angular-god-road/assets/js/10.edd26f16.js"><link rel="prefetch" href="/angular-god-road/assets/js/11.33f54712.js"><link rel="prefetch" href="/angular-god-road/assets/js/12.fcc87fd4.js"><link rel="prefetch" href="/angular-god-road/assets/js/13.fa6e9f88.js"><link rel="prefetch" href="/angular-god-road/assets/js/14.050d9df1.js"><link rel="prefetch" href="/angular-god-road/assets/js/15.9f880834.js"><link rel="prefetch" href="/angular-god-road/assets/js/16.b96760bb.js"><link rel="prefetch" href="/angular-god-road/assets/js/17.13fefc8b.js"><link rel="prefetch" href="/angular-god-road/assets/js/18.c850d375.js"><link rel="prefetch" href="/angular-god-road/assets/js/19.7239064a.js"><link rel="prefetch" href="/angular-god-road/assets/js/2.a2bd3099.js"><link rel="prefetch" href="/angular-god-road/assets/js/20.4125efb9.js"><link rel="prefetch" href="/angular-god-road/assets/js/21.2a9e4d33.js"><link rel="prefetch" href="/angular-god-road/assets/js/22.f2cf7fbc.js"><link rel="prefetch" href="/angular-god-road/assets/js/23.7ff8e04e.js"><link rel="prefetch" href="/angular-god-road/assets/js/24.9f44b1b7.js"><link rel="prefetch" href="/angular-god-road/assets/js/25.0ec2854a.js"><link rel="prefetch" href="/angular-god-road/assets/js/26.7c66210d.js"><link rel="prefetch" href="/angular-god-road/assets/js/27.d9097f9d.js"><link rel="prefetch" href="/angular-god-road/assets/js/28.7d96a001.js"><link rel="prefetch" href="/angular-god-road/assets/js/29.4fc02651.js"><link rel="prefetch" href="/angular-god-road/assets/js/3.3d49ed81.js"><link rel="prefetch" href="/angular-god-road/assets/js/30.99a6671a.js"><link rel="prefetch" href="/angular-god-road/assets/js/31.2591ba92.js"><link rel="prefetch" href="/angular-god-road/assets/js/32.78ddd0be.js"><link rel="prefetch" href="/angular-god-road/assets/js/33.e9af0299.js"><link rel="prefetch" href="/angular-god-road/assets/js/34.c0d5a741.js"><link rel="prefetch" href="/angular-god-road/assets/js/35.284fb844.js"><link rel="prefetch" href="/angular-god-road/assets/js/36.1cb64f86.js"><link rel="prefetch" href="/angular-god-road/assets/js/37.b69ebefc.js"><link rel="prefetch" href="/angular-god-road/assets/js/38.048dd2ef.js"><link rel="prefetch" href="/angular-god-road/assets/js/39.9e4eec87.js"><link rel="prefetch" href="/angular-god-road/assets/js/40.9610211f.js"><link rel="prefetch" href="/angular-god-road/assets/js/41.ddd45347.js"><link rel="prefetch" href="/angular-god-road/assets/js/42.d2ebe819.js"><link rel="prefetch" href="/angular-god-road/assets/js/43.e1f5311e.js"><link rel="prefetch" href="/angular-god-road/assets/js/44.b5c3267a.js"><link rel="prefetch" href="/angular-god-road/assets/js/45.b34d49e9.js"><link rel="prefetch" href="/angular-god-road/assets/js/46.3602c3b6.js"><link rel="prefetch" href="/angular-god-road/assets/js/5.488dbe6d.js"><link rel="prefetch" href="/angular-god-road/assets/js/6.1c8c7528.js"><link rel="prefetch" href="/angular-god-road/assets/js/7.fc1d55b7.js"><link rel="prefetch" href="/angular-god-road/assets/js/8.0ebf2d9c.js"><link rel="prefetch" href="/angular-god-road/assets/js/9.dacb7e8b.js">
+    <link rel="stylesheet" href="/angular-god-road/assets/css/1.styles.24fddc56.css"><link rel="stylesheet" href="/angular-god-road/assets/css/2.styles.a2bd3099.css"><link rel="stylesheet" href="/angular-god-road/assets/css/styles.4eaf616f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/angular-god-road/" class="home-link router-link-active"><!----> <span class="site-name">Angular 修仙之路</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/angular-god-road/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://semlinker.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  前端修仙之路
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/semlinker" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/angular-god-road/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://semlinker.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  前端修仙之路
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/semlinker" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading"><span>入门篇</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>工具篇</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>元素篇</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/angular-god-road/element/ng-element-ref.html" class="sidebar-link">Angular ElementRef 简介</a></li><li><a href="/angular-god-road/element/viewchild-and-viewchildren.html" class="sidebar-link">Angular ViewChild 和 ViewChildren</a></li><li><a href="/angular-god-road/element/ng-template-vs-ng-container.html" class="sidebar-link">Angular ng-template vs ng-container</a></li><li><a href="/angular-god-road/element/ng-content-projection.html" class="sidebar-link">Angular 内容投影</a></li><li><a href="/angular-god-road/element/ng-content-projection-hidden-docs.html" class="active sidebar-link">ng-content 中隐藏的内容</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/angular-god-road/element/ng-custom-attr-directive.html" class="sidebar-link">Angular 自定义属性指令</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>其它</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>RxJS</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>RxJS</span> <span class="arrow right"></span></p> <!----></div></li></ul> </div> <div class="page"> <div class="content"><p>如果你尝试在 Angular 中编写可重复使用的组件，则可能会接触到内容投射的概念。然后你发现了 <code>&lt;ng-content&gt;</code>，并找到了一些关于它的文章，进而实现了所需的功能。</p> <p>接下来我们来通过一个简单的示例，一步步介绍 <code>&lt;ng-content&gt;</code> 所涉及的内容。</p> <h3 id="简单示例"><a href="#简单示例" aria-hidden="true" class="header-anchor">#</a> 简单示例</h3> <p>在本文中我们使用一个示例，来演示不同的方式实现内容投影。由于许多问题与Angular 中的组件生命周期相关，因此我们的主要组件将显示一个计数器，用于展示它已被实例化的次数：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> instances <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'counter'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token string">'&lt;h1&gt;{{this.id}}&lt;/h1&gt;'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">Counter</span> <span class="token punctuation">{</span>
+  id<span class="token punctuation">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+  
+  <span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>id <span class="token operator">=</span> <span class="token operator">++</span>instances<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>上面示例中我们定义了 Counter 组件，组件类中的 id 属性用于显示本组件被实例化的次数。接着我们继续定义一个 Wrapper 组件：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'wrapper'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+    &lt;div class=&quot;box&quot;&gt;
+      &lt;ng-content&gt;&lt;/ng-content&gt;
+    &lt;/div&gt;
+  `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">Wrapper</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre></div><p>现在我们来验证一下效果：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;wrapper&gt;
+  &lt;counter&gt;&lt;/counter&gt;
+  &lt;counter&gt;&lt;/counter&gt;
+  &lt;counter&gt;&lt;/counter&gt;
+&lt;/wrapper&gt;
+</code></pre></div><h3 id="targeted-projection"><a href="#targeted-projection" aria-hidden="true" class="header-anchor">#</a> Targeted projection</h3> <p>有时你希望将包装器的不同子项投影到模板的不同部分。为了处理这个问题，<code>&lt;ng-content&gt;</code> 支持一个 <code>select</code> 属性，可以让你在特定的地方投射具体的内容。该属性支持 CSS 选择器（my-element，.my-class，[my-attribute]，...）来匹配你想要的内容。如果 ng-content 上没有设置 <code>select</code> 属性，它将接收全部内容，或接收不匹配任何其他 <code>ng-content</code> 元素的内容。长话短说：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'wrapper'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+  &lt;div class=&quot;box red&quot;&gt;
+    &lt;ng-content&gt;&lt;/ng-content&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;box blue&quot;&gt;
+    &lt;ng-content select=&quot;counter&quot;&gt;&lt;/ng-content&gt;
+  &lt;/div&gt;
+  `</span></span><span class="token punctuation">,</span>
+  styles<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token template-string"><span class="token string">`
+    .red {background: red;}
+    .blue {background: blue;}
+  `</span></span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">Wrapper</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+</code></pre></div><p>上面示例中，我们引入了 <code>select</code> 属性，来选择投射的内容：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>wrapper</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>This is not a counter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>counter</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>counter</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>wrapper</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>上述代码成功运行后，<code>counter</code> 组件被正确投影到第二个蓝色框中，而 span 元素最终会在全部红色框中。请注意，目标 <code>ng-content</code> 会优先于 catch-all，即使它在模板中的位置靠后。</p> <h3 id="ngprojectas"><a href="#ngprojectas" aria-hidden="true" class="header-anchor">#</a> ngProjectAs</h3> <p>有时你的内部组件会被隐藏在另一个更大的组件中。有时你只需要将其包装在额外的容器中即可应用 <code>ngIf</code> 或 <code>ngSwitch</code>。无论什么原因，通常情况下，你的内部组件不是包装器的直接子节点。为了演示上述情况，我们将 Counter 组件包装在一个 <code>&lt;ng-container&gt;</code> 中，看看我们的目标投影会发生什么：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>wrapper</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ng-container</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>counter</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>counter</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ng-container</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>wrapper</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>现在我们的 couter 组件会被投影到第一个红色框中。因为 <code>ng-container</code> 容器不再匹配 <code>select=&quot;counter&quot;</code>。为了解决这个问题，我们必须使用 <code>ngProjectAs</code> 属性，它可以应用于任何元素上。具体如下：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>wrapper</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ng-container</span> <span class="token attr-name">ngProjectAs</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>counter<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>counter</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>counter</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ng-container</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>wrapper</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>通过设置 <code>ngProjectAs</code> 属性，终于让我们的 counter 组件重回蓝色框的怀抱了。</p> <h3 id="time-to-poke-and-prod"><a href="#time-to-poke-and-prod" aria-hidden="true" class="header-anchor">#</a> Time to poke and prod</h3> <p>我们从一个简单的实验开始：将两个 <code>&lt;ng-content&gt;</code> 块放在我们的模板中，没有选择器。会出现什么情况？</p> <p>页面中会显示一个或两个框，如果我们包含两个框，它们的内容是显示 1 和 1 或 1 和 2？</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>box red<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ng-content</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ng-content</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>box blue<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ng-content</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ng-content</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>答案是我们在最后一个 <code>&lt;ng-content&gt;</code> 中得到一个计数器，另一个是空的！在我们尝试解释为什么之前，让我们再来验证一个问题，即在 <code>ng-content</code> 指令的外层容器中添加 <code>ngIf</code> 指令：</p> <div class="language-html extra-class"><pre class="language-html"><code>import { Component } from '@angular/core';
+
+@Component({
+  selector: 'wrapper',
+  template: `
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">(click)</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>show = !show<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      {{ show ? 'Hide' : 'Show' }}
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>box<span class="token punctuation">&quot;</span></span> <span class="token attr-name">*ngIf</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>show<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ng-content</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ng-content</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  `
+})
+class Wrapper {
+  show = true;
+}
+</code></pre></div><p>乍一看，似乎正常运行。但是如果你通过按钮进行切换操作，你会注意到计数器的值不会增加。这意味着我们的计数器组件只被实例化了一次 - 从未被销毁和重新创建。难道这是 <code>ngIf</code> 指令产生的问题，让我们测试一下 <code>ngFor</code> 指令，看看是否有同样的问题：</p> <div class="language-html extra-class"><pre class="language-html"><code>import { Component } from '@angular/core';
+
+@Component({
+  selector: 'wrapper',
+  template: `
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>box<span class="token punctuation">&quot;</span></span> <span class="token attr-name">*ngFor</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>let item of items<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ng-content</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ng-content</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  `
+})
+class Wrapper {
+  items = [0, 0, 0];
+}
+</code></pre></div><p>以上代码运行后与我们使用多个 <code>&lt;ng-content&gt;</code> 的效果是一样的，只会显示一个计数器！为什么不按照我们的预期运行？</p> <h3 id="the-explanation"><a href="#the-explanation" aria-hidden="true" class="header-anchor">#</a> The explanation</h3> <p><code>&lt;ng-content&gt;</code> 不会 &quot;产生&quot; 内容，它只是投影现有的内容。你可以认为它等价于 <code>node.appendChild(el)</code>或 jQuery 中的 <code>$(node).append(el)</code> 方法：使用这些方法，节点不被克隆，它被简单地移动到它的新位置。因此，投影内容的生命周期将被绑定到它被声明的地方，而不是显示在地方。</p> <p>这种行为有两个原因：期望一致性和性能。什么 &quot;期望的一致性&quot; 意味着作为开发人员，可以基于应用程序的代码，猜测其行为。假设我写了以下代码：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>my-wrapper<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>counter</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>counter</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>很显然计数器将被实例化一次，但现在假如我们使用第三方库的组件：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>third-party-wrapper</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>counter</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>counter</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>third-party-wrapper</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>如果第三方库能够控制 counter 组件的生命周期，我将无法知道它被实例化了多少次。其中唯一方法就是查看第三方库的代码，了解它们的内部处理逻辑。将组件的生命周期被绑定到我们的应用程序组件而不是包装器的意义是，开发者可以掌控计数器只被实例化一次，而不用了解第三方库的内部代码。</p> <p>性能的原因更为重要。因为 <code>ng-content</code> 只是移动元素，所以可以在编译时完成，而不是在运行时，这大大减少了实际应用程序的工作量。</p> <h3 id="the-solution"><a href="#the-solution" aria-hidden="true" class="header-anchor">#</a> The solution</h3> <p>为了让包装器能够控制其子元素的实例化，我们可以通过两种方式完成：在我们的内容周围使用 <code>&lt;ng-template&gt;</code> 元素，或者使用带有 &quot;*&quot; 语法的结构指令。为简单起见，我们将在示例中使用 <code>&lt;ng-template&gt;</code> 语法，我们的新应用程序如下所示：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>wrapper</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ng-template</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>counter</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>counter</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ng-template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>wrapper</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>包装器不再使用 <code>&lt;ng-content&gt;</code>，因为它接收到一个模板。我们需要使用 <code>@ContentChild</code> 访问模板，并使用<code>ngTemplateOutlet</code> 来显示它：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code>@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'wrapper'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+    &lt;button (click)=&quot;show = !show&quot;&gt;
+      {{ show ? 'Hide' : 'Show' }}
+    &lt;/button&gt;
+    &lt;div class=&quot;box&quot; *ngIf=&quot;show&quot;&gt;
+      &lt;ng-container [ngTemplateOutlet]=&quot;template&quot;&gt;&lt;/ng-container&gt;
+    &lt;/div&gt;
+  `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">Wrapper</span> <span class="token punctuation">{</span>
+  show <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+  @<span class="token function">ContentChild</span><span class="token punctuation">(</span>TemplateRef<span class="token punctuation">)</span> template<span class="token punctuation">:</span> TemplateRef<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>现在我们的 counter 组件，每当我们隐藏并重新显示时都正确递增！让我们再验证一下 <code>*ngFor</code> 指令：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code>@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'wrapper'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+    &lt;div class=&quot;box&quot; *ngFor=&quot;let item of items&quot;&gt;
+      &lt;ng-container [ngTemplateOutlet]=&quot;template&quot;&gt;&lt;/ng-container&gt;
+    &lt;/div&gt;
+  `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">Wrapper</span> <span class="token punctuation">{</span>
+  items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  @<span class="token function">ContentChild</span><span class="token punctuation">(</span>TemplateRef<span class="token punctuation">)</span> template<span class="token punctuation">:</span> TemplateRef<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>上面代码成功运行后，每个盒子中有一个计数器，显示 1，2 和 3，这正是我们之前预期的结果。</p> <h3 id="参考资源"><a href="#参考资源" aria-hidden="true" class="header-anchor">#</a> 参考资源</h3> <ul><li><a href="https://medium.com/claritydesignsystem/ng-content-the-hidden-docs-96a29d70d11b" target="_blank" rel="noopener noreferrer">ng-content-the-hidden-docs<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/angular-god-road/element/ng-content-projection.html" class="prev">
+          Angular 内容投影
+        </a></span> <span class="next"><a href="/angular-god-road/element/ng-custom-attr-directive.html">
+          Angular 自定义属性指令
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/angular-god-road/assets/js/4.ff267ab9.js" defer></script><script src="/angular-god-road/assets/js/app.4eaf616f.js" defer></script>
+  </body>
+</html>

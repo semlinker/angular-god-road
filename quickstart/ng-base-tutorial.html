@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>第一节 - 基于 Angular CLI 新建项目 | Angular 修仙之路</title>
+    <meta name="description" content="修炼 Angular、RxJS、TypeScript 秘籍">
+    
+    
+    <link rel="preload" href="/angular-god-road/assets/css/styles.4eaf616f.css" as="style"><link rel="preload" href="/angular-god-road/assets/js/app.4eaf616f.js" as="script"><link rel="preload" href="/angular-god-road/assets/js/17.13fefc8b.js" as="script"><link rel="prefetch" href="/angular-god-road/assets/css/1.styles.24fddc56.css"><link rel="prefetch" href="/angular-god-road/assets/css/2.styles.a2bd3099.css"><link rel="prefetch" href="/angular-god-road/assets/js/1.24fddc56.js"><link rel="prefetch" href="/angular-god-road/assets/js/10.edd26f16.js"><link rel="prefetch" href="/angular-god-road/assets/js/11.33f54712.js"><link rel="prefetch" href="/angular-god-road/assets/js/12.fcc87fd4.js"><link rel="prefetch" href="/angular-god-road/assets/js/13.fa6e9f88.js"><link rel="prefetch" href="/angular-god-road/assets/js/14.050d9df1.js"><link rel="prefetch" href="/angular-god-road/assets/js/15.9f880834.js"><link rel="prefetch" href="/angular-god-road/assets/js/16.b96760bb.js"><link rel="prefetch" href="/angular-god-road/assets/js/18.c850d375.js"><link rel="prefetch" href="/angular-god-road/assets/js/19.7239064a.js"><link rel="prefetch" href="/angular-god-road/assets/js/2.a2bd3099.js"><link rel="prefetch" href="/angular-god-road/assets/js/20.4125efb9.js"><link rel="prefetch" href="/angular-god-road/assets/js/21.2a9e4d33.js"><link rel="prefetch" href="/angular-god-road/assets/js/22.f2cf7fbc.js"><link rel="prefetch" href="/angular-god-road/assets/js/23.7ff8e04e.js"><link rel="prefetch" href="/angular-god-road/assets/js/24.9f44b1b7.js"><link rel="prefetch" href="/angular-god-road/assets/js/25.0ec2854a.js"><link rel="prefetch" href="/angular-god-road/assets/js/26.7c66210d.js"><link rel="prefetch" href="/angular-god-road/assets/js/27.d9097f9d.js"><link rel="prefetch" href="/angular-god-road/assets/js/28.7d96a001.js"><link rel="prefetch" href="/angular-god-road/assets/js/29.4fc02651.js"><link rel="prefetch" href="/angular-god-road/assets/js/3.3d49ed81.js"><link rel="prefetch" href="/angular-god-road/assets/js/30.99a6671a.js"><link rel="prefetch" href="/angular-god-road/assets/js/31.2591ba92.js"><link rel="prefetch" href="/angular-god-road/assets/js/32.78ddd0be.js"><link rel="prefetch" href="/angular-god-road/assets/js/33.e9af0299.js"><link rel="prefetch" href="/angular-god-road/assets/js/34.c0d5a741.js"><link rel="prefetch" href="/angular-god-road/assets/js/35.284fb844.js"><link rel="prefetch" href="/angular-god-road/assets/js/36.1cb64f86.js"><link rel="prefetch" href="/angular-god-road/assets/js/37.b69ebefc.js"><link rel="prefetch" href="/angular-god-road/assets/js/38.048dd2ef.js"><link rel="prefetch" href="/angular-god-road/assets/js/39.9e4eec87.js"><link rel="prefetch" href="/angular-god-road/assets/js/4.ff267ab9.js"><link rel="prefetch" href="/angular-god-road/assets/js/40.9610211f.js"><link rel="prefetch" href="/angular-god-road/assets/js/41.ddd45347.js"><link rel="prefetch" href="/angular-god-road/assets/js/42.d2ebe819.js"><link rel="prefetch" href="/angular-god-road/assets/js/43.e1f5311e.js"><link rel="prefetch" href="/angular-god-road/assets/js/44.b5c3267a.js"><link rel="prefetch" href="/angular-god-road/assets/js/45.b34d49e9.js"><link rel="prefetch" href="/angular-god-road/assets/js/46.3602c3b6.js"><link rel="prefetch" href="/angular-god-road/assets/js/5.488dbe6d.js"><link rel="prefetch" href="/angular-god-road/assets/js/6.1c8c7528.js"><link rel="prefetch" href="/angular-god-road/assets/js/7.fc1d55b7.js"><link rel="prefetch" href="/angular-god-road/assets/js/8.0ebf2d9c.js"><link rel="prefetch" href="/angular-god-road/assets/js/9.dacb7e8b.js">
+    <link rel="stylesheet" href="/angular-god-road/assets/css/1.styles.24fddc56.css"><link rel="stylesheet" href="/angular-god-road/assets/css/2.styles.a2bd3099.css"><link rel="stylesheet" href="/angular-god-road/assets/css/styles.4eaf616f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/angular-god-road/" class="home-link router-link-active"><!----> <span class="site-name">Angular 修仙之路</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/angular-god-road/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://semlinker.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  前端修仙之路
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/semlinker" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/angular-god-road/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://semlinker.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  前端修仙之路
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/semlinker" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading open"><span>入门篇</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/angular-god-road/quickstart/ng-quickstart.html" class="sidebar-link">Angular 6 快速入门</a></li><li><a href="/angular-god-road/quickstart/ng-base-tutorial.html" class="active sidebar-link">Angular 6 基础教程</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/angular-god-road/quickstart/ng-base-tutorial.html#第一节-基于-angular-cli-新建项目" class="sidebar-link">第一节 - 基于 Angular CLI 新建项目</a></li><li class="sidebar-sub-header"><a href="/angular-god-road/quickstart/ng-base-tutorial.html#第二节-创建简单的组件" class="sidebar-link">第二节 - 创建简单的组件</a></li><li class="sidebar-sub-header"><a href="/angular-god-road/quickstart/ng-base-tutorial.html#第三节-事件和模板引用" class="sidebar-link">第三节 - 事件和模板引用</a></li><li class="sidebar-sub-header"><a href="/angular-god-road/quickstart/ng-base-tutorial.html#第四节-事件进阶" class="sidebar-link">第四节 - 事件进阶</a></li><li class="sidebar-sub-header"><a href="/angular-god-road/quickstart/ng-base-tutorial.html#第五节-注入服务" class="sidebar-link">第五节 - 注入服务</a></li><li class="sidebar-sub-header"><a href="/angular-god-road/quickstart/ng-base-tutorial.html#第六节-使用-ngfor-指令" class="sidebar-link">第六节 - 使用 ngFor 指令</a></li><li class="sidebar-sub-header"><a href="/angular-god-road/quickstart/ng-base-tutorial.html#第七节-使用-input-装饰器" class="sidebar-link">第七节 - 使用 Input 装饰器</a></li><li class="sidebar-sub-header"><a href="/angular-god-road/quickstart/ng-base-tutorial.html#第八节-使用双向绑定" class="sidebar-link">第八节 - 使用双向绑定</a></li><li class="sidebar-sub-header"><a href="/angular-god-road/quickstart/ng-base-tutorial.html#第九节-使用-output-装饰器" class="sidebar-link">第九节 - 使用 Output 装饰器</a></li><li class="sidebar-sub-header"><a href="/angular-god-road/quickstart/ng-base-tutorial.html#第十节-组件样式" class="sidebar-link">第十节 - 组件样式</a></li></ul></li><li><a href="/angular-god-road/quickstart/ng-pipe-quickstart.html" class="sidebar-link">Angular 6 管道快速入门</a></li><li><a href="/angular-god-road/quickstart/ng-form-quickstart.html" class="sidebar-link">Angular 6 表单快速入门</a></li><li><a href="/angular-god-road/quickstart/ng-directive-quickstart.html" class="sidebar-link">Angular 6 快速入门</a></li><li><a href="/angular-god-road/quickstart/ng-http-client-quickstart.html" class="sidebar-link">Angular 6 HttpClient 快速入门</a></li><li><a href="/angular-god-road/quickstart/ng-library-quickstart.html" class="sidebar-link">Angular Library 快速入门</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>工具篇</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>元素篇</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>其它</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>RxJS</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>RxJS</span> <span class="arrow right"></span></p> <!----></div></li></ul> </div> <div class="page"> <div class="content"><h2 id="第一节-基于-angular-cli-新建项目"><a href="#第一节-基于-angular-cli-新建项目" aria-hidden="true" class="header-anchor">#</a> 第一节 - 基于 Angular CLI 新建项目</h2> <h3 id="安装-angular-cli-可选"><a href="#安装-angular-cli-可选" aria-hidden="true" class="header-anchor">#</a> 安装 Angular CLI (可选)</h3> <ul><li>安装 <a href="https://github.com/angular/angular-cli" target="_blank" rel="noopener noreferrer">Angular CLI<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> (可选)</li></ul> <div class="language-shell extra-class"><pre class="language-text"><code>$ npm install -g @angular/cli
+</code></pre></div><ul><li>检测 Angular CLI 是否安装成功</li></ul> <div class="language-shell extra-class"><pre class="language-text"><code>$ ng --version
+</code></pre></div><h3 id="使用-angular-cli"><a href="#使用-angular-cli" aria-hidden="true" class="header-anchor">#</a> 使用 Angular CLI</h3> <ul><li>新建项目</li></ul> <div class="language-shell extra-class"><pre class="language-text"><code>$ ng new angular6-fundamentals
+</code></pre></div><ul><li>启动本地服务器</li></ul> <div class="language-shell extra-class"><pre class="language-text"><code>$ ng serve
+</code></pre></div><p>若想进一步了解 Angular CLI 的详细信息，请参考 <a href="https://segmentfault.com/a/1190000009771946" target="_blank" rel="noopener noreferrer">Angular CLI 终极指南<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>。</p> <h2 id="第二节-创建简单的组件"><a href="#第二节-创建简单的组件" aria-hidden="true" class="header-anchor">#</a> 第二节 - 创建简单的组件</h2> <h3 id="新建组件"><a href="#新建组件" aria-hidden="true" class="header-anchor">#</a> 新建组件</h3> <div class="language-shell extra-class"><pre class="language-text"><code>$ ng generate component simple-form --inline-template --inline-style
+# Or
+$ ng g c simple-form -it -is # 新建组件，该组件使用内联模板和内联样式
+</code></pre></div><p>在命令行窗口运行以上命令后，将输出以下内容：</p> <div class="language-shell extra-class"><pre class="language-text"><code>CREATE src/app/simple-form/simple-form.component.spec.ts (657 bytes)
+CREATE src/app/simple-form/simple-form.component.ts (270 bytes)
+UPDATE src/app/app.module.ts (554 bytes)
+</code></pre></div><p>即执行上述操作后，创建了两个文件：</p> <ul><li>simple-form.component.spec.ts —— 用于单元测试</li> <li>simple-form.component.ts —— 新建的组件</li></ul> <p>除此之外，<code>UPDATE src/app/app.module.ts</code> 表示执行上述操作后，Angular CLI 会自动帮我们更新 <code>app.module.ts</code> 文件。所更新的内容是把我们新建的组件添加到 <code>NgModule</code> 的 <code>declarations</code> 数组中，具体如下：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code>@<span class="token function">NgModule</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  declarations<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    AppComponent<span class="token punctuation">,</span>
+    SimpleFormComponent
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token operator">...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppModule</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+</code></pre></div><h3 id="使用组件"><a href="#使用组件" aria-hidden="true" class="header-anchor">#</a> 使用组件</h3> <h4 id="appcomponent"><a href="#appcomponent" aria-hidden="true" class="header-anchor">#</a> AppComponent</h4> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'app-root'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+    &lt;h3&gt;{{title}}&lt;/h3&gt;
+    &lt;div&gt;
+      &lt;app-simple-form&gt;&lt;/app-simple-form&gt;
+    &lt;/div&gt;
+  `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppComponent</span> <span class="token punctuation">{</span>
+  title <span class="token operator">=</span> <span class="token string">'Hello, Angular'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="simpleformcomponent"><a href="#simpleformcomponent" aria-hidden="true" class="header-anchor">#</a> SimpleFormComponent</h4> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Component<span class="token punctuation">,</span> OnInit <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'app-simple-form'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+    &lt;p&gt;
+      simple-form Works!
+    &lt;/p&gt;
+  `</span></span><span class="token punctuation">,</span>
+  styles<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">SimpleFormComponent</span> <span class="token keyword">implements</span> <span class="token class-name">OnInit</span> <span class="token punctuation">{</span>
+  <span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+  <span class="token function">ngOnInit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>从生成的 <code>SimpleFormComponent</code> 组件中，我们发现组件的 <code>selector</code> 是 <code>app-simple-form</code>，而我们是使用以下命令创建该组件：</p> <div class="language-shell extra-class"><pre class="language-text"><code>$ ng g c simple-form -it -is
+</code></pre></div><p>即 Angular CLI 在创建组件时，自动帮我们添加了前缀。那为什么前缀是 <code>app</code> 呢？答案是在项目根目录下的 <code>angular.json</code> 文件中，已经默认帮我们配置了默认的前缀，具体如下：</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token property">&quot;angular6-fundamentals&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;root&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;sourceRoot&quot;</span><span class="token operator">:</span> <span class="token string">&quot;src&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;projectType&quot;</span><span class="token operator">:</span> <span class="token string">&quot;application&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;prefix&quot;</span><span class="token operator">:</span> <span class="token string">&quot;app&quot;</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>当然你可以根据实际需求，自行更改默认的前缀配置。</p> <h2 id="第三节-事件和模板引用"><a href="#第三节-事件和模板引用" aria-hidden="true" class="header-anchor">#</a> 第三节 - 事件和模板引用</h2> <p>在 Angular 中，我们可以使用 <code>(eventName)</code> 语法，进行事件绑定。此外，可以使用 <code>#variableName</code> 的语法，定义模板引用。</p> <h3 id="simpleformcomponent-2"><a href="#simpleformcomponent-2" aria-hidden="true" class="header-anchor">#</a> SimpleFormComponent</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span>Component<span class="token punctuation">,</span> OnInit<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'app-simple-form'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+    &lt;div&gt;
+     &lt;input #myInput type=&quot;text&quot;&gt;
+     &lt;button (click)=&quot;onClick(myInput.value)&quot;&gt;点击&lt;/button&gt;
+    &lt;/div&gt;
+  `</span></span><span class="token punctuation">,</span>
+  styles<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">SimpleFormComponent</span> <span class="token keyword">implements</span> <span class="token class-name">OnInit</span> <span class="token punctuation">{</span>  
+  <span class="token function">onClick</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">ngOnInit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>需要注意的是，若我们改变绑定的表达式为 <code>(click)=&quot;onClick(myInput)&quot;</code> ，当我们点击按钮时，控制台输出的结果是：</p> <div class="language-shell extra-class"><pre class="language-text"><code>&lt;input type=&quot;text&quot;&gt;
+</code></pre></div><p>通过该输出结果，我们可以知道 <code>#variableName</code> 语法，我们获取的对象是对应 DOM 元素的引用。</p> <h2 id="第四节-事件进阶"><a href="#第四节-事件进阶" aria-hidden="true" class="header-anchor">#</a> 第四节 - 事件进阶</h2> <h3 id="获取鼠标事件"><a href="#获取鼠标事件" aria-hidden="true" class="header-anchor">#</a> 获取鼠标事件</h3> <p>在第三节的示例中，假如我们需要获取鼠标事件，那应该怎么办呢？这时，我们可以引入 <code>$event</code> 变量，具体如下：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span>Component<span class="token punctuation">,</span> OnInit<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'app-simple-form'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+    &lt;div&gt;
+     &lt;input #myInput type=&quot;text&quot;&gt;
+     &lt;button (click)=&quot;onClick($event, myInput.value)&quot;&gt;点击&lt;/button&gt;
+    &lt;/div&gt;
+  `</span></span><span class="token punctuation">,</span>
+  styles<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">SimpleFormComponent</span> <span class="token keyword">implements</span> <span class="token class-name">OnInit</span> <span class="token punctuation">{</span>
+  <span class="token function">onClick</span><span class="token punctuation">(</span>event<span class="token punctuation">,</span> value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">ngOnInit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>成功运行以上代码，当我们点击按钮时，控制台将输出：</p> <div class="language-shell extra-class"><pre class="language-text"><code>MouseEvent {isTrusted: true, screenX: 180, screenY: 207, clientX: 165,
+  clientY: 75…}
+</code></pre></div><p>需要注意的是，参数名一定要使用 <code>$event</code> ，否则无法获取正确的鼠标事件。此外，<code>onClick($event, myInput.value)</code> 表达式中，<code>$event</code> 的顺序是任意的，如：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">(click)</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>onClick(myInput.value, $event)<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>点击<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>当 Angular 在调用我们的事件处理函数时，会自动帮我们处理调用的参数。<code>$event</code> 自动映射为触发的事件，与我们 <code>Provider</code> 中 <code>Token</code> 的作用类似。除了监听鼠标事件外，我们还可以监听键盘事件。</p> <h3 id="获取键盘事件"><a href="#获取键盘事件" aria-hidden="true" class="header-anchor">#</a> 获取键盘事件</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span>Component<span class="token punctuation">,</span> OnInit<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'app-simple-form'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+    &lt;div&gt;
+     &lt;input #myInput type=&quot;text&quot; (keydown.enter)=&quot;onEnter($event, myInput.value)&quot;&gt;
+     &lt;button (click)=&quot;onClick($event, myInput.value)&quot;&gt;点击&lt;/button&gt;
+    &lt;/div&gt;
+  `</span></span><span class="token punctuation">,</span>
+  styles<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">SimpleFormComponent</span> <span class="token keyword">implements</span> <span class="token class-name">OnInit</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+  <span class="token function">onEnter</span><span class="token punctuation">(</span>event<span class="token punctuation">,</span> value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>以上代码中， <code>(keydown.enter)=&quot;onEnter($event, myInput.value)&quot;</code> 表达式表示我们监听键盘 <code>enter</code> 键的按下事件，当我们按下键盘的 <code>enter</code> 键时，将会调用组件类中定义的 <code>onEnter()</code> 方法。我们同样也可以通过 <code>$event</code> 来获取 <code>KeyboardEvent</code> 对象。</p> <h2 id="第五节-注入服务"><a href="#第五节-注入服务" aria-hidden="true" class="header-anchor">#</a> 第五节 - 注入服务</h2> <h3 id="新建服务"><a href="#新建服务" aria-hidden="true" class="header-anchor">#</a> 新建服务</h3> <div class="language-shell extra-class"><pre class="language-text"><code>$ ng g s mail
+</code></pre></div><p>在命令行窗口运行以上命令后，将输出以下内容：</p> <div class="language-shell extra-class"><pre class="language-text"><code>CREATE src/app/mail.service.spec.ts (362 bytes)
+CREATE src/app/mail.service.ts (133 bytes)
+</code></pre></div><p>即执行上述操作后，创建了两个文件：</p> <ul><li>mail.service.spec.ts —— 用于单元测试</li> <li>mail.service.ts —— 新建的服务</li></ul> <h3 id="更新服务"><a href="#更新服务" aria-hidden="true" class="header-anchor">#</a> 更新服务</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Injectable <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;@angular/core&quot;</span><span class="token punctuation">;</span>
+
+@<span class="token function">Injectable</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  providedIn<span class="token punctuation">:</span> <span class="token string">&quot;root&quot;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">MailService</span> <span class="token punctuation">{</span>
+  message<span class="token punctuation">:</span> <span class="token builtin">string</span> <span class="token operator">=</span> <span class="token string">&quot;该消息来自MailService&quot;</span><span class="token punctuation">;</span>
+  <span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="使用服务"><a href="#使用服务" aria-hidden="true" class="header-anchor">#</a> 使用服务</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span>MailService<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;./mail.service&quot;</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'app-root'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+    &lt;h3&gt;{{title}}&lt;/h3&gt;
+    &lt;div&gt;
+      &lt;app-simple-form&gt;&lt;/app-simple-form&gt;
+      {{mailService.message}}
+    &lt;/div&gt;
+  `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppComponent</span> <span class="token punctuation">{</span>
+  title <span class="token operator">=</span> <span class="token string">'Hello, Angular'</span><span class="token punctuation">;</span>
+  <span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token keyword">private</span> mailService<span class="token punctuation">:</span> MailService<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>除了使用 <code>constructor(private mailService: MailService)</code> 方式注入服务外，我们也可以使用 <code>Inject</code> 装饰器来注入 <code>MailService</code> 服务：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span>Component<span class="token punctuation">,</span> Inject<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppComponent</span> <span class="token punctuation">{</span>
+  title <span class="token operator">=</span> <span class="token string">'Hello, Angular'</span><span class="token punctuation">;</span>
+  
+  <span class="token keyword">constructor</span><span class="token punctuation">(</span>@<span class="token function">Inject</span><span class="token punctuation">(</span>MailService<span class="token punctuation">)</span> <span class="token keyword">private</span> mailService<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>不过对于 <code>Type</code> 类型(函数类型) 的对象，我们一般使用 <code>constructor(private mailService: MailService)</code> 方式进行注入。而 <code>Inject</code> 装饰器一般用来注入非 <code>Type</code> 类型的对象。</p> <h3 id="使用inject装饰器"><a href="#使用inject装饰器" aria-hidden="true" class="header-anchor">#</a> 使用Inject装饰器</h3> <h4 id="appmodule"><a href="#appmodule" aria-hidden="true" class="header-anchor">#</a> AppModule</h4> <div class="language-typescript extra-class"><pre class="language-typescript"><code>@<span class="token function">NgModule</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token operator">...</span>
+  providers<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    MailService<span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>provide<span class="token punctuation">:</span> <span class="token string">'apiUrl'</span><span class="token punctuation">,</span> useValue<span class="token punctuation">:</span> <span class="token string">'https://jsonplaceholder.typicode.com/'</span><span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  bootstrap<span class="token punctuation">:</span> <span class="token punctuation">[</span>AppComponent<span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppModule</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+</code></pre></div><h4 id="appcomponent-2"><a href="#appcomponent-2" aria-hidden="true" class="header-anchor">#</a> AppComponent</h4> <div class="language-typescript extra-class"><pre class="language-typescript"><code>@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'app-root'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+    &lt;h3&gt;{{title}}&lt;/h3&gt;
+    &lt;div&gt;
+      &lt;app-simple-form&gt;&lt;/app-simple-form&gt;
+      {{mailService.message}}
+      &lt;p&gt;API_URL: {{apiUrl}}&lt;/p&gt;
+    &lt;/div&gt;
+  `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppComponent</span> <span class="token punctuation">{</span>
+  title <span class="token operator">=</span> <span class="token string">'Hello, Angular'</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">constructor</span><span class="token punctuation">(</span>
+    @<span class="token function">Inject</span><span class="token punctuation">(</span>MailService<span class="token punctuation">)</span> <span class="token keyword">private</span> mailService<span class="token punctuation">,</span>
+    @<span class="token function">Inject</span><span class="token punctuation">(</span><span class="token string">'apiUrl'</span><span class="token punctuation">)</span> <span class="token keyword">private</span> apiUrl
+  <span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="第六节-使用-ngfor-指令"><a href="#第六节-使用-ngfor-指令" aria-hidden="true" class="header-anchor">#</a> 第六节 - 使用 ngFor 指令</h2> <p>在 Angular 中我们可以使用 <code>ngFor</code> 指令来显示数组中每一项的信息。</p> <h3 id="使用-ngfor-指令"><a href="#使用-ngfor-指令" aria-hidden="true" class="header-anchor">#</a> 使用 ngFor 指令</h3> <h4 id="更新-mailservice-服务"><a href="#更新-mailservice-服务" aria-hidden="true" class="header-anchor">#</a> 更新 MailService 服务</h4> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Injectable <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Injectable</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">MailService</span> <span class="token punctuation">{</span>
+  messages<span class="token punctuation">:</span> <span class="token builtin">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token string">'天之骄子，加入修仙之路群'</span><span class="token punctuation">,</span>
+    <span class="token string">'Shadows，加入修仙之路群'</span><span class="token punctuation">,</span>
+    <span class="token string">'Keriy，加入修仙之路群'</span>
+  <span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="更新-appcomponent-组件"><a href="#更新-appcomponent-组件" aria-hidden="true" class="header-anchor">#</a> 更新 AppComponent 组件</h4> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span>Component<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span>MailService<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;./mail.service&quot;</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'app-root'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+    &lt;h3&gt;{{title}}&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li *ngFor=&quot;let message of mailService.messages; index as i;&quot;&gt;
+        {{i}} - {{message}}
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppComponent</span> <span class="token punctuation">{</span>
+  title <span class="token operator">=</span> <span class="token string">'Hello, Angular'</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token keyword">private</span> mailService<span class="token punctuation">:</span> MailService<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>在 AppComponent 组件的模板中，我们使用 <code>let item of items;</code> 语法迭代数组中的每一项，另外我们使用 <code>index as i</code> 用来访问数组中每一项的索引值。除了 <code>index</code> 外，我们还可以获取以下的值：</p> <ul><li>first: boolean —— 若当前项是可迭代对象的第一项，则返回 true</li> <li>last: boolean —— 若当前项是可迭代对象的最后一项，则返回 true</li> <li>even: boolean —— 若当前项的索引值是偶数，则返回 true</li> <li>odd: boolean —— 若当前项的索引值是奇数，则返回 true</li></ul> <p>需要注意的是，<code>*ngFor</code> 中的 <code>*</code> 号是语法糖，表示结构指令。因为该语法最终会转换成：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ng-template</span> <span class="token attr-name">ngFor</span> <span class="token attr-name">let-item</span> <span class="token attr-name">[ngForOf]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>items<span class="token punctuation">&quot;</span></span> <span class="token attr-name">let-i</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>index<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ng-template</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>除了 <code>*ngFor</code> 外，常用的结构指令还有 <code>*ngIf</code>、<code>*ngSwitchCase</code> 指令。</p> <h2 id="第七节-使用-input-装饰器"><a href="#第七节-使用-input-装饰器" aria-hidden="true" class="header-anchor">#</a> 第七节 - 使用 Input 装饰器</h2> <p>为了让我们能够开发更灵活的组件，Angular 为我们提供了 <code>Input</code> 装饰器，用于定义组件的输入属性。</p> <h3 id="使用-input-装饰器"><a href="#使用-input-装饰器" aria-hidden="true" class="header-anchor">#</a> 使用 Input 装饰器</h3> <h4 id="更新-simpleformcomponent-组件"><a href="#更新-simpleformcomponent-组件" aria-hidden="true" class="header-anchor">#</a> 更新 SimpleFormComponent 组件</h4> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span>Component<span class="token punctuation">,</span> OnInit<span class="token punctuation">,</span>Input<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'app-simple-form'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+    &lt;div&gt;
+     {{message}}
+     &lt;input #myInput type=&quot;text&quot; (keydown.enter)=&quot;onEnter($event, myInput.value)&quot;&gt;
+     &lt;button (click)=&quot;onClick($event, myInput.value)&quot;&gt;点击&lt;/button&gt;
+    &lt;/div&gt;
+  `</span></span><span class="token punctuation">,</span>
+  styles<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">SimpleFormComponent</span> <span class="token keyword">implements</span> <span class="token class-name">OnInit</span> <span class="token punctuation">{</span>
+  @<span class="token function">Input</span><span class="token punctuation">(</span><span class="token punctuation">)</span> message<span class="token punctuation">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="更新-appcomponent-组件-2"><a href="#更新-appcomponent-组件-2" aria-hidden="true" class="header-anchor">#</a> 更新 AppComponent 组件</h4> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span>Component<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span>MailService<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;./mail.service&quot;</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'app-root'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+    &lt;h3&gt;{{title}}&lt;/h3&gt;
+    &lt;app-simple-form *ngFor=&quot;let message of mailService.messages;&quot;
+      [message]=&quot;message&quot;&gt;
+    &lt;/app-simple-form&gt;
+  `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppComponent</span> <span class="token punctuation">{</span>
+  title <span class="token operator">=</span> <span class="token string">'Hello, Angular'</span><span class="token punctuation">;</span>
+  <span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token keyword">private</span> mailService<span class="token punctuation">:</span> MailService<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>在 AppComponent 组件模板中，我们使用 <code>[message]=&quot;message&quot;</code> 属性绑定的语法，实现数据传递。即把数据从 <code>AppComponent</code> 组件，传递到 <code>SimpleFormComponent</code> 组件中。</p> <p>需要注意的是，当 <code>SimpleFormComponent</code> 组件类的属性名称不是 <code>message</code> 时，我们需要告诉 Angular 如何进行属性值绑定，具体如下：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">SimpleFormComponent</span> <span class="token keyword">implements</span> <span class="token class-name">OnInit</span> <span class="token punctuation">{</span>
+  @<span class="token function">Input</span><span class="token punctuation">(</span><span class="token string">'message'</span><span class="token punctuation">)</span> msg<span class="token punctuation">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>不过一般不推荐这样做，尽量保持名称一致。</p> <h2 id="第八节-使用双向绑定"><a href="#第八节-使用双向绑定" aria-hidden="true" class="header-anchor">#</a> 第八节 - 使用双向绑定</h2> <p>使用过 AngularJS 1.x 的同学，应该很熟悉 <code>ng-model</code> 指令，通过该指令我们可以方便地实现数据的双向绑定。而在 Angular 中，我们是通过 <code>ngModel</code> 指令，来实现双向绑定。</p> <h3 id="使用双向绑定"><a href="#使用双向绑定" aria-hidden="true" class="header-anchor">#</a> 使用双向绑定</h3> <h4 id="引入-formsmodule"><a href="#引入-formsmodule" aria-hidden="true" class="header-anchor">#</a> 引入 FormsModule</h4> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span>FormsModule<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;@angular/forms&quot;</span><span class="token punctuation">;</span>
+
+@<span class="token function">NgModule</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+  imports<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    BrowserModule<span class="token punctuation">,</span>
+    FormsModule
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppModule</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+</code></pre></div><h4 id="使用-ngmodel-指令"><a href="#使用-ngmodel-指令" aria-hidden="true" class="header-anchor">#</a> 使用 ngModel 指令</h4> <div class="language-typescript extra-class"><pre class="language-typescript"><code>@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'app-simple-form'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+    &lt;div&gt;
+     {{message}}
+     &lt;input #myInput type=&quot;text&quot; [(ngModel)]=&quot;message&quot;&gt;
+     &lt;button (click)=&quot;onClick($event, myInput.value)&quot;&gt;点击&lt;/button&gt;
+    &lt;/div&gt;
+  `</span></span><span class="token punctuation">,</span>
+  styles<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">SimpleFormComponent</span> <span class="token keyword">implements</span> <span class="token class-name">OnInit</span> <span class="token punctuation">{</span> <span class="token comment">// ...}</span>
+</code></pre></div><p>上面示例中，我们使用 <code>[(ngModel)]=&quot;message&quot;</code> 语法实现数据的双向绑定。该语法也称作 <code>Banana in the Box</code> 语法，即香蕉在盒子里 (比较形象生动，记忆该语法)。</p> <p><img src="https://segmentfault.com/img/bVK3Xs?w=300&h=211" alt="banana-in-box"></p> <p>除了使用双向绑定，我们也可以通过 <code>ngModel</code> 指令，实现单向数据绑定，如 <code>[ngModel]=&quot;message&quot;</code>。</p> <h2 id="第九节-使用-output-装饰器"><a href="#第九节-使用-output-装饰器" aria-hidden="true" class="header-anchor">#</a> 第九节 - 使用 Output 装饰器</h2> <p><code>Output</code> 装饰器的作用是用来实现子组件将信息，通过事件的形式通知到父级组件。</p> <p>在介绍 Output 属性装饰器前，我们先来介绍一下 <code>EventEmitter</code> 这个幕后英雄：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">let</span> numberEmitter<span class="token punctuation">:</span> EventEmitter<span class="token operator">&lt;</span><span class="token builtin">number</span><span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">EventEmitter</span><span class="token operator">&lt;</span><span class="token builtin">number</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+numberEmitter<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token punctuation">(</span>value<span class="token punctuation">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+numberEmitter<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>接下来我们来介绍如何使用 <code>Output</code> 装饰器。</p> <h3 id="使用-output-装饰器"><a href="#使用-output-装饰器" aria-hidden="true" class="header-anchor">#</a> 使用 Output 装饰器</h3> <h4 id="更新-simpleformcomponent-组件-2"><a href="#更新-simpleformcomponent-组件-2" aria-hidden="true" class="header-anchor">#</a> 更新 SimpleFormComponent 组件</h4> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span>Component<span class="token punctuation">,</span> OnInit<span class="token punctuation">,</span> Input<span class="token punctuation">,</span> Output<span class="token punctuation">,</span> EventEmitter<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'app-simple-form'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+    &lt;div&gt;
+     {{ message }}
+     &lt;input #myInput type=&quot;text&quot; [(ngModel)]=&quot;message&quot;&gt;
+     &lt;button (click)=&quot;update.emit({text: message})&quot;&gt;更新&lt;/button&gt;
+    &lt;/div&gt;
+  `</span></span><span class="token punctuation">,</span>
+  styles<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">SimpleFormComponent</span> <span class="token keyword">implements</span> <span class="token class-name">OnInit</span> <span class="token punctuation">{</span>
+  @<span class="token function">Input</span><span class="token punctuation">(</span><span class="token punctuation">)</span> message<span class="token punctuation">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  @<span class="token function">Output</span><span class="token punctuation">(</span><span class="token punctuation">)</span> update <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">EventEmitter</span><span class="token operator">&lt;</span><span class="token punctuation">{</span>text<span class="token punctuation">:</span> <span class="token builtin">string</span><span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">ngOnInit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="更新-mailservice-服务-2"><a href="#更新-mailservice-服务-2" aria-hidden="true" class="header-anchor">#</a> 更新 MailService 服务</h4> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span>Injectable<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Injectable</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">MailService</span> <span class="token punctuation">{</span>
+
+  messages<span class="token punctuation">:</span> <span class="token builtin">Array</span><span class="token operator">&lt;</span><span class="token punctuation">{</span>id<span class="token punctuation">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> text<span class="token punctuation">:</span> <span class="token builtin">string</span><span class="token punctuation">}</span><span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>id<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> text<span class="token punctuation">:</span> <span class="token string">'天之骄子，加入修仙之路群'</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>id<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> text<span class="token punctuation">:</span> <span class="token string">'Shadows，加入修仙之路群'</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>id<span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> text<span class="token punctuation">:</span> <span class="token string">'Keriy，加入修仙之路群'</span><span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+  <span class="token function">update</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> text<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>messages <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>messages<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>msg <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> msg<span class="token punctuation">.</span>id <span class="token operator">===</span> id <span class="token operator">?</span> <span class="token punctuation">{</span>id<span class="token punctuation">,</span> text<span class="token punctuation">}</span> <span class="token punctuation">:</span> msg<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="更新-appcomponent-组件-3"><a href="#更新-appcomponent-组件-3" aria-hidden="true" class="header-anchor">#</a> 更新 AppComponent 组件</h4> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span>Component<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span>MailService<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;./mail.service&quot;</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'app-root'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+    &lt;h3&gt;{{title}}&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li *ngFor=&quot;let message of mailService.messages;&quot;&gt;
+        {{message.text}}
+      &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;app-simple-form *ngFor=&quot;let message of mailService.messages;&quot;
+      [message]=&quot;message.text&quot;
+      (update)=&quot;onUpdate(message.id, $event.text)&quot;&gt;
+    &lt;/app-simple-form&gt;
+  `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppComponent</span> <span class="token punctuation">{</span>
+  title <span class="token operator">=</span> <span class="token string">'Hello, Angular'</span><span class="token punctuation">;</span>
+
+  <span class="token function">onUpdate</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> text<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>mailService<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> text<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token keyword">private</span> mailService<span class="token punctuation">:</span> MailService<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>上面示例中，我们仍然使用 <code>(eventName)</code> 事件绑定的语法，监听我们自定义的 <code>update</code> 事件。当在 <code>SimpleFormComponent</code> 组件中修改 <code>input</code> 输入框的文本消息后，点击更新按钮，将会调用 <code>AppComponent</code> 组件类中的 <code>onUpdate()</code>  方法，更新对应的信息。</p> <h2 id="第十节-组件样式"><a href="#第十节-组件样式" aria-hidden="true" class="header-anchor">#</a> 第十节 - 组件样式</h2> <p>在 Angular 中，我们可以在设置组件元数据时通过 <code>styles</code> 或 <code>styleUrls</code> 属性，来设置组件的内联样式和外联样式。</p> <h3 id="使用-styles-属性"><a href="#使用-styles-属性" aria-hidden="true" class="header-anchor">#</a> 使用 styles 属性</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span>Component<span class="token punctuation">,</span> OnInit<span class="token punctuation">,</span> Input<span class="token punctuation">,</span> Output<span class="token punctuation">,</span> EventEmitter<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'app-simple-form'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+    ...
+  `</span></span><span class="token punctuation">,</span>
+  styles<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token template-string"><span class="token string">`
+   :host { margin: 10px; }
+   input:focus { font-weight: bold;}
+  `</span></span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">SimpleFormComponent</span> <span class="token keyword">implements</span> <span class="token class-name">OnInit</span> <span class="token punctuation">{</span>
+  @<span class="token function">Input</span><span class="token punctuation">(</span><span class="token punctuation">)</span> message<span class="token punctuation">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  @<span class="token function">Output</span><span class="token punctuation">(</span><span class="token punctuation">)</span> update <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">EventEmitter</span><span class="token operator">&lt;</span><span class="token punctuation">{</span>text<span class="token punctuation">:</span> <span class="token builtin">string</span><span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">ngOnInit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>上面示例中 <code>:host</code> 表示选择宿主元素，即 <code>AppComponent</code> 组件模板中的 <code>app-simple-form</code> 元素。</p> <p>用过 AngularJS 1.x 的同学，对 <code>ng-class</code> 应该很熟悉，通过它我们能够根据条件，为元素动态的添加或移除对应的样式。在 Angular 中，对应的指令是 <code>ngClass</code> 。接下来我们来看一下，<code>ngClass</code> 指令的具体应用。</p> <h3 id="使用-ngclass-指令"><a href="#使用-ngclass-指令" aria-hidden="true" class="header-anchor">#</a> 使用 ngClass 指令</h3> <p><code>ngClass</code> 指令接收一个对象字面量，对象的 <code>key</code> 是 CSS class 的名称，<code>value</code> 的值是 <code>truthy/falsy</code> 的值，表示是否应用该样式。</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code>@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'app-simple-form'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+    &lt;div&gt;
+     {{message}}
+     &lt;input #myInput 
+      type=&quot;text&quot; 
+      [(ngModel)]=&quot;message&quot;
+      [ngClass]=&quot;{mousedown: isMousedown}&quot;
+      (mousedown)=&quot;isMousedown = true&quot;
+      (mouseup)=&quot;isMousedown = false&quot;
+      (mouseleave)=&quot;isMousedown = false&quot;
+      &gt;
+     &lt;button (click)=&quot;update.emit({text: message})&quot;&gt;更新&lt;/button&gt;
+    &lt;/div&gt;
+  `</span></span><span class="token punctuation">,</span>
+  styles<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token template-string"><span class="token string">`
+    :host { margin: 10px; }
+    .mousedown { border: 2px solid green; }
+    input:focus { font-weight: bold; outline: none; }
+   `</span></span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">SimpleFormComponent</span> <span class="token keyword">implements</span> <span class="token class-name">OnInit</span> <span class="token punctuation">{</span>
+  isMousedown<span class="token punctuation">:</span> <span class="token builtin">boolean</span><span class="token punctuation">;</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="ngclass-指令用法"><a href="#ngclass-指令用法" aria-hidden="true" class="header-anchor">#</a> ngClass 指令用法</h4> <div class="language-html extra-class"><pre class="language-html"><code><span class="token comment">&lt;!-- 使用布尔值 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">[ngClass]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>{bordered: false}<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>This is never bordered<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">[ngClass]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>{bordered: true}<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>This is always bordered<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token comment">&lt;!-- 使用组件实例的属性 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">[ngClass]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>{bordered: isBordered}<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+   Using object literal. Border {{ isBordered ? &quot;ON&quot; : &quot;OFF&quot; }}
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token comment">&lt;!-- 样式名包含'-' --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">[ngClass]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>{<span class="token punctuation">'</span>bordered-box<span class="token punctuation">'</span>: false}<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+   Class names contains dashes must use single quote
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token comment">&lt;!-- 使用样式列表 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>base<span class="token punctuation">&quot;</span></span> <span class="token attr-name">[ngClass]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>[<span class="token punctuation">'</span>blue<span class="token punctuation">'</span>, <span class="token punctuation">'</span>round<span class="token punctuation">'</span>]<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span> 
+  This will always have a blue background and round corners
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>除了 <code>ngClass</code> 指令外，Angular 还为我们提供了 <code>ngStyle</code> 指令。</p> <h3 id="使用-ngstyle-指令"><a href="#使用-ngstyle-指令" aria-hidden="true" class="header-anchor">#</a> 使用 ngStyle 指令</h3> <p><code>ngStyle</code> 指令让我们可以方便得通过 Angular 表达式，设置 DOM 元素的 CSS 属性。</p> <h4 id="ngstyle-指令用法"><a href="#ngstyle-指令用法" aria-hidden="true" class="header-anchor">#</a> ngStyle 指令用法</h4> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">[ngStyle]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>{color: <span class="token punctuation">'</span>white<span class="token punctuation">'</span>, <span class="token punctuation">'</span>background-color<span class="token punctuation">'</span>: <span class="token punctuation">'</span>blue<span class="token punctuation">'</span>}<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+   Uses fixed white text on blue background
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>需要注意的是， <code>background-color</code> 需要使用单引号，而 <code>color</code> 不需要。这其中的原因是，<code>ng-style</code> 要求的参数是一个 <code>Javascript</code> 对象，<code>color</code> 是一个有效的 <code>key</code>，而 <code>background-color</code> 不是一个有效的 <code>key</code> ，所以需要添加 <code>''</code>。</p> <p>对于一些场合，我们也可以直接利用 Angular 属性绑定的语法，来快速设置元素的样式。</p> <ul><li>设置元素的背景颜色</li></ul> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">[style.background-color]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span><span class="token punctuation">'</span>yellow<span class="token punctuation">'</span><span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  Use fixed yellow background
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span> 
+</code></pre></div><ul><li>设置元素的字体大小</li></ul> <div class="language-html extra-class"><pre class="language-html"><code><span class="token comment">&lt;!-- 支持单位: px | em | %--&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">[ngStyle]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>{color: <span class="token punctuation">'</span>red<span class="token punctuation">'</span>}<span class="token punctuation">&quot;</span></span> <span class="token attr-name">[style.font-size.px]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>fontSize<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      Red Text
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/angular-god-road/quickstart/ng-quickstart.html" class="prev">
+          Angular 6 快速入门
+        </a></span> <span class="next"><a href="/angular-god-road/quickstart/ng-pipe-quickstart.html">
+          Angular 6 管道快速入门
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/angular-god-road/assets/js/17.13fefc8b.js" defer></script><script src="/angular-god-road/assets/js/app.4eaf616f.js" defer></script>
+  </body>
+</html>

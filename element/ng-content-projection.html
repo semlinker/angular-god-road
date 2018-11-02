@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Angular 内容投影 | Angular 修仙之路</title>
+    <meta name="description" content="修炼 Angular、RxJS、TypeScript 秘籍">
+    
+    
+    <link rel="preload" href="/angular-god-road/assets/css/styles.4eaf616f.css" as="style"><link rel="preload" href="/angular-god-road/assets/js/app.4eaf616f.js" as="script"><link rel="preload" href="/angular-god-road/assets/js/5.488dbe6d.js" as="script"><link rel="prefetch" href="/angular-god-road/assets/css/1.styles.24fddc56.css"><link rel="prefetch" href="/angular-god-road/assets/css/2.styles.a2bd3099.css"><link rel="prefetch" href="/angular-god-road/assets/js/1.24fddc56.js"><link rel="prefetch" href="/angular-god-road/assets/js/10.edd26f16.js"><link rel="prefetch" href="/angular-god-road/assets/js/11.33f54712.js"><link rel="prefetch" href="/angular-god-road/assets/js/12.fcc87fd4.js"><link rel="prefetch" href="/angular-god-road/assets/js/13.fa6e9f88.js"><link rel="prefetch" href="/angular-god-road/assets/js/14.050d9df1.js"><link rel="prefetch" href="/angular-god-road/assets/js/15.9f880834.js"><link rel="prefetch" href="/angular-god-road/assets/js/16.b96760bb.js"><link rel="prefetch" href="/angular-god-road/assets/js/17.13fefc8b.js"><link rel="prefetch" href="/angular-god-road/assets/js/18.c850d375.js"><link rel="prefetch" href="/angular-god-road/assets/js/19.7239064a.js"><link rel="prefetch" href="/angular-god-road/assets/js/2.a2bd3099.js"><link rel="prefetch" href="/angular-god-road/assets/js/20.4125efb9.js"><link rel="prefetch" href="/angular-god-road/assets/js/21.2a9e4d33.js"><link rel="prefetch" href="/angular-god-road/assets/js/22.f2cf7fbc.js"><link rel="prefetch" href="/angular-god-road/assets/js/23.7ff8e04e.js"><link rel="prefetch" href="/angular-god-road/assets/js/24.9f44b1b7.js"><link rel="prefetch" href="/angular-god-road/assets/js/25.0ec2854a.js"><link rel="prefetch" href="/angular-god-road/assets/js/26.7c66210d.js"><link rel="prefetch" href="/angular-god-road/assets/js/27.d9097f9d.js"><link rel="prefetch" href="/angular-god-road/assets/js/28.7d96a001.js"><link rel="prefetch" href="/angular-god-road/assets/js/29.4fc02651.js"><link rel="prefetch" href="/angular-god-road/assets/js/3.3d49ed81.js"><link rel="prefetch" href="/angular-god-road/assets/js/30.99a6671a.js"><link rel="prefetch" href="/angular-god-road/assets/js/31.2591ba92.js"><link rel="prefetch" href="/angular-god-road/assets/js/32.78ddd0be.js"><link rel="prefetch" href="/angular-god-road/assets/js/33.e9af0299.js"><link rel="prefetch" href="/angular-god-road/assets/js/34.c0d5a741.js"><link rel="prefetch" href="/angular-god-road/assets/js/35.284fb844.js"><link rel="prefetch" href="/angular-god-road/assets/js/36.1cb64f86.js"><link rel="prefetch" href="/angular-god-road/assets/js/37.b69ebefc.js"><link rel="prefetch" href="/angular-god-road/assets/js/38.048dd2ef.js"><link rel="prefetch" href="/angular-god-road/assets/js/39.9e4eec87.js"><link rel="prefetch" href="/angular-god-road/assets/js/4.ff267ab9.js"><link rel="prefetch" href="/angular-god-road/assets/js/40.9610211f.js"><link rel="prefetch" href="/angular-god-road/assets/js/41.ddd45347.js"><link rel="prefetch" href="/angular-god-road/assets/js/42.d2ebe819.js"><link rel="prefetch" href="/angular-god-road/assets/js/43.e1f5311e.js"><link rel="prefetch" href="/angular-god-road/assets/js/44.b5c3267a.js"><link rel="prefetch" href="/angular-god-road/assets/js/45.b34d49e9.js"><link rel="prefetch" href="/angular-god-road/assets/js/46.3602c3b6.js"><link rel="prefetch" href="/angular-god-road/assets/js/6.1c8c7528.js"><link rel="prefetch" href="/angular-god-road/assets/js/7.fc1d55b7.js"><link rel="prefetch" href="/angular-god-road/assets/js/8.0ebf2d9c.js"><link rel="prefetch" href="/angular-god-road/assets/js/9.dacb7e8b.js">
+    <link rel="stylesheet" href="/angular-god-road/assets/css/1.styles.24fddc56.css"><link rel="stylesheet" href="/angular-god-road/assets/css/2.styles.a2bd3099.css"><link rel="stylesheet" href="/angular-god-road/assets/css/styles.4eaf616f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/angular-god-road/" class="home-link router-link-active"><!----> <span class="site-name">Angular 修仙之路</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/angular-god-road/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://semlinker.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  前端修仙之路
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/semlinker" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/angular-god-road/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://semlinker.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  前端修仙之路
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/semlinker" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading"><span>入门篇</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>工具篇</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>元素篇</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/angular-god-road/element/ng-element-ref.html" class="sidebar-link">Angular ElementRef 简介</a></li><li><a href="/angular-god-road/element/viewchild-and-viewchildren.html" class="sidebar-link">Angular ViewChild 和 ViewChildren</a></li><li><a href="/angular-god-road/element/ng-template-vs-ng-container.html" class="sidebar-link">Angular ng-template vs ng-container</a></li><li><a href="/angular-god-road/element/ng-content-projection.html" class="active sidebar-link">Angular 内容投影</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/angular-god-road/element/ng-content-projection-hidden-docs.html" class="sidebar-link">ng-content 中隐藏的内容</a></li><li><a href="/angular-god-road/element/ng-custom-attr-directive.html" class="sidebar-link">Angular 自定义属性指令</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>其它</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>RxJS</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>RxJS</span> <span class="arrow right"></span></p> <!----></div></li></ul> </div> <div class="page"> <div class="content"><p>在介绍 content projection 之前，我们先来观察一下以下的表单。对于同一个系统来说，下面的两个表单的区别在于使用不同的标题。为了提高组件的复用性，我们可以把相同的部分抽成独立的组件，然后把不同的部分单独出来。</p> <p><img src="http://cdn.semlinker.com/register-and-login-origin.jpg" alt="register-and-login-origin"></p> <p>这虽然可以解决问题，但能够进一步提高组件的复用性么？即让用户能够灵活设置标题。答案是可以的，在 Angular 中引入了内容投影的概念，即通过使用 <code>&lt;ng-content&gt;</code> 指令来实现内容投影的功能。</p> <p><img src="http://cdn.semlinker.com/content-projection.png" alt="content-projection"></p> <p>接下来我们来看一下，如何利用 <code>&lt;ng-content&gt;</code> 指令实现上述的功能。</p> <p>首先我们来定义 AuthFormComponent 组件：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Component<span class="token punctuation">,</span> Output<span class="token punctuation">,</span> EventEmitter <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;@angular/core&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> User <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;./auth-form.interface&quot;</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">&quot;auth-form&quot;</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+    &lt;div&gt;
+      &lt;form (ngSubmit)=&quot;onSubmit(form.value)&quot; #form=&quot;ngForm&quot;&gt;
+        &lt;ng-content&gt;&lt;/ng-content&gt;
+        &lt;label&gt;
+          邮箱
+          &lt;input type=&quot;email&quot; name=&quot;email&quot; ngModel&gt;
+        &lt;/label&gt;
+        &lt;label&gt;
+          密码
+          &lt;input type=&quot;password&quot; name=&quot;password&quot; ngModel&gt;
+        &lt;/label&gt;
+        &lt;button type=&quot;submit&quot;&gt;
+          提交
+        &lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AuthFormComponent</span> <span class="token punctuation">{</span>
+  @<span class="token function">Output</span><span class="token punctuation">(</span><span class="token punctuation">)</span> submitted<span class="token punctuation">:</span> EventEmitter<span class="token operator">&lt;</span>User<span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">EventEmitter</span><span class="token operator">&lt;</span>User<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">onSubmit</span><span class="token punctuation">(</span>value<span class="token punctuation">:</span> User<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>submitted<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>然后我们在 AppComponent 组件中，使用上面定义的 AuthFormComponent 组件，具体如下：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;@angular/core&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> User <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;./auth-form/auth-form.interface&quot;</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">&quot;app-root&quot;</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+    &lt;div&gt;
+      &lt;auth-form 
+        (submitted)=&quot;createUser($event)&quot;&gt;
+        &lt;h3&gt;注册&lt;/h3&gt;
+      &lt;/auth-form&gt;
+      &lt;auth-form 
+        (submitted)=&quot;loginUser($event)&quot;&gt;
+        &lt;h3&gt;登录&lt;/h3&gt;
+      &lt;/auth-form&gt;
+    &lt;/div&gt;
+  `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppComponent</span> <span class="token punctuation">{</span>
+  <span class="token function">createUser</span><span class="token punctuation">(</span>user<span class="token punctuation">:</span> User<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Create account&quot;</span><span class="token punctuation">,</span> user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">loginUser</span><span class="token punctuation">(</span>user<span class="token punctuation">:</span> User<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Login&quot;</span><span class="token punctuation">,</span> user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>对应的示例图如下：</p> <p><img src="http://cdn.semlinker.com/auth-form.jpg" alt="auth-form"></p> <p>这里我们来做个总结，包含在 <code>&lt;auth-form&gt;</code> 标签内的内容，会被投影到 <code>AuthFormComponent</code> 组件 <code>&lt;ng-content&gt;</code> 所在区域。</p> <h3 id="select-属性"><a href="#select-属性" aria-hidden="true" class="header-anchor">#</a> select 属性</h3> <p>如果你已经理解了上面的内容，那我们继续，假设对于注册表单，”提交“ 按钮的名称我们想改为 ”注册“，而登录表单的 ”提交“ 按钮，我们想改为 ”登录“。那要如何处理，你可能会想到以下的解决方案：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code>@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">&quot;app-root&quot;</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+    &lt;div&gt;
+      &lt;auth-form 
+        (submitted)=&quot;createUser($event)&quot;&gt;
+        &lt;h3&gt;注册&lt;/h3&gt;
+        &lt;button type=&quot;submit&quot;&gt;
+         注册
+        &lt;/button&gt;
+      &lt;/auth-form&gt;
+      &lt;auth-form 
+        (submitted)=&quot;loginUser($event)&quot;&gt;
+        &lt;h3&gt;登录&lt;/h3&gt;
+        &lt;button type=&quot;submit&quot;&gt;
+         登录
+        &lt;/button&gt;
+      &lt;/auth-form&gt;
+    &lt;/div&gt;
+  `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppComponent</span> <span class="token punctuation">{</span> 
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>以上代码的运行结果：</p> <p><img src="http://cdn.semlinker.com/injection-slots-intro.jpg" alt="injection-slots-intro"></p> <p>虽然我们实现了内容投影，即把标题和按钮都成功投影到 AuthFormComponent 组件中，但你会发现按钮的位置并不是预期的。那么如何解决这个问题呢？很庆幸地是，<code>&lt;ng-content&gt;</code> 指令为我们提供了 <code>select</code> 属性来设定投射的内容。</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Component<span class="token punctuation">,</span> Output<span class="token punctuation">,</span> EventEmitter <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;@angular/core&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> User <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;./auth-form.interface&quot;</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">&quot;auth-form&quot;</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+    &lt;div&gt;
+      &lt;form (ngSubmit)=&quot;onSubmit(form.value)&quot; #form=&quot;ngForm&quot;&gt;
+        &lt;ng-content select=&quot;h3&quot;&gt;&lt;/ng-content&gt;
+        &lt;label&gt;
+          邮箱
+          &lt;input type=&quot;email&quot; name=&quot;email&quot; ngModel&gt;
+        &lt;/label&gt;
+        &lt;label&gt;
+          密码
+          &lt;input type=&quot;password&quot; name=&quot;password&quot; ngModel&gt;
+        &lt;/label&gt;
+        &lt;ng-content select=&quot;button&quot;&gt;&lt;/ng-content&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AuthFormComponent</span> <span class="token punctuation">{</span>
+ <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><code>select</code> 属性支持 CSS 选择器（my-element，.my-class，[my-attribute]，...）来匹配你想要的内容。如果 <code>ng-content</code> 上没有设置 <code>select</code> 属性，它将接收全部内容，或接收不匹配任何其他 <code>ng-content</code> 元素的内容。</p> <p>以上示例我们使用元素选择器，来实现选择性内容投影，最后的运行结果如下：</p> <p><img src="http://cdn.semlinker.com/injection-slots.jpg" alt="injection-slots"></p> <h3 id="组件投影"><a href="#组件投影" aria-hidden="true" class="header-anchor">#</a> 组件投影</h3> <p><code>ng-content</code> 指令除了支持标准的 HTML 标签外，还支持自定义指令。为了演示这个特性，我们先来新建一个 AuthRememberComponent 组件：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Component<span class="token punctuation">,</span> Output<span class="token punctuation">,</span> EventEmitter <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'auth-remember'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+    &lt;label&gt;
+      &lt;input type=&quot;checkbox&quot; (change)=&quot;onChecked($event.target.checked)&quot;&gt;
+      Keep me logged in
+    &lt;/label&gt;
+  `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AuthRememberComponent</span> <span class="token punctuation">{</span>
+
+  @<span class="token function">Output</span><span class="token punctuation">(</span><span class="token punctuation">)</span> checked<span class="token punctuation">:</span> EventEmitter<span class="token operator">&lt;</span><span class="token builtin">boolean</span><span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">EventEmitter</span><span class="token operator">&lt;</span><span class="token builtin">boolean</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">onChecked</span><span class="token punctuation">(</span>value<span class="token punctuation">:</span> <span class="token builtin">boolean</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>checked<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>接着我们来更新一下 AuthFormComponent 组件：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code>@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'auth-form'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+    &lt;div&gt;
+      &lt;form (ngSubmit)=&quot;onSubmit(form.value)&quot; #form=&quot;ngForm&quot;&gt;
+        &lt;ng-content select=&quot;h3&quot;&gt;&lt;/ng-content&gt;
+        &lt;label&gt;
+          邮箱
+          &lt;input type=&quot;email&quot; name=&quot;email&quot; ngModel&gt;
+        &lt;/label&gt;
+        &lt;label&gt;
+          密码
+          &lt;input type=&quot;password&quot; name=&quot;password&quot; ngModel&gt;
+        &lt;/label&gt;
+        &lt;ng-content select=&quot;auth-remember&quot;&gt;&lt;/ng-content&gt;
+        &lt;ng-content select=&quot;button&quot;&gt;&lt;/ng-content&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AuthFormComponent</span> <span class="token punctuation">{</span>
+ <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>在 AuthFormComponent 组件模板中，我们新增了一行 <code>&lt;ng-content select=&quot;auth-remember&quot;&gt;&lt;/ng-content&gt;</code>，用来设置投影的内容。</p> <h3 id="contentchild"><a href="#contentchild" aria-hidden="true" class="header-anchor">#</a> ContentChild</h3> <p>上面我们已经介绍了内容投射的相关概念及 <code>&lt;ng-content&gt;</code> 指令的常见用法。下面我们来介绍在组件内部，如何获取 <code>&lt;ng-content&gt;</code> 投射的内容。</p> <p>在 Angular 中提供了 <code>ContentChild</code> 装饰器来获取投影的元素。</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code>@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">&quot;auth-form&quot;</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+    &lt;div&gt;
+      &lt;form (ngSubmit)=&quot;onSubmit(form.value)&quot; #form=&quot;ngForm&quot;&gt;
+        &lt;ng-content select=&quot;h3&quot;&gt;&lt;/ng-content&gt;
+        &lt;label&gt;
+          Email address
+          &lt;input type=&quot;email&quot; name=&quot;email&quot; ngModel&gt;
+        &lt;/label&gt;
+        &lt;label&gt;
+          Password
+          &lt;input type=&quot;password&quot; name=&quot;password&quot; ngModel&gt;
+        &lt;/label&gt;
+        &lt;ng-content select=&quot;auth-remember&quot;&gt;&lt;/ng-content&gt;
+        &lt;div *ngIf=&quot;showMessage&quot;&gt;
+          保持登录状态30天
+        &lt;/div&gt;
+        &lt;ng-content select=&quot;button&quot;&gt;&lt;/ng-content&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AuthFormComponent</span> <span class="token keyword">implements</span> <span class="token class-name">AfterContentInit</span> <span class="token punctuation">{</span>
+  showMessage<span class="token punctuation">:</span> <span class="token builtin">boolean</span><span class="token punctuation">;</span>
+
+  @<span class="token function">ContentChild</span><span class="token punctuation">(</span>AuthRememberComponent<span class="token punctuation">)</span> remember<span class="token punctuation">:</span> AuthRememberComponent<span class="token punctuation">;</span>
+  
+  <span class="token function">ngAfterContentInit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>remember<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>remember<span class="token punctuation">.</span>checked<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span>
+        <span class="token punctuation">(</span>checked<span class="token punctuation">:</span> <span class="token builtin">boolean</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>showMessage <span class="token operator">=</span> checked<span class="token punctuation">)</span>
+      <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>以上示例中，我们通过 <code>ContentChild(AuthRememberComponent)</code> 来设置获取的组件类型，此外我们在生命周期钩子  <code>ngAfterContentInit</code> 中通过订阅 remember 的 checked 输出属性来监听 checkbox 输入框的变化。同时根据 AuthRememberComponent 组件中 checkbox 的值来控制是否显示 ”保持登录30天“ 的提示消息。</p> <h3 id="contentchildren"><a href="#contentchildren" aria-hidden="true" class="header-anchor">#</a> ContentChildren</h3> <p>除了 <code>ContentChild</code> 装饰器之外，Angular 还为我们提供了一个 <code>ContentChildren</code> 装饰器，用来从通过 Content Projection 方式设置的视图中获取匹配的多个元素，返回的结果是一个 QueryList 集合。</p> <p>为了能获取多个元素，首先我们需要更新一下 AppComponent 组件，即我们在模板中新增两个 AuthRememberComponent 组件，具体如下：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code>@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">&quot;app-root&quot;</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+    &lt;div&gt;
+      &lt;auth-form 
+        (submitted)=&quot;createUser($event)&quot;&gt;
+        &lt;h3&gt;注册&lt;/h3&gt;
+        &lt;button type=&quot;submit&quot;&gt;
+          注册
+        &lt;/button&gt;
+      &lt;/auth-form&gt;
+      &lt;auth-form 
+        (submitted)=&quot;loginUser($event)&quot;&gt;
+        &lt;h3&gt;登录&lt;/h3&gt;
+        &lt;auth-remember (checked)=&quot;rememberUser($event)&quot;&gt;&lt;/auth-remember&gt;
+        &lt;auth-remember (checked)=&quot;rememberUser($event)&quot;&gt;&lt;/auth-remember&gt;
+        &lt;auth-remember (checked)=&quot;rememberUser($event)&quot;&gt;&lt;/auth-remember&gt;
+        &lt;button type=&quot;submit&quot;&gt;
+          登录
+        &lt;/button&gt;
+      &lt;/auth-form&gt;
+    &lt;/div&gt;
+  `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppComponent</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>接着我们需要在 AuthFormComponent 组件中引入 <code>ContentChildren</code> 装饰器，更新后的 AuthFormComponent 组件如下：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Component<span class="token punctuation">,</span> Output<span class="token punctuation">,</span> EventEmitter<span class="token punctuation">,</span> ContentChildren<span class="token punctuation">,</span> QueryList<span class="token punctuation">,</span> AfterContentInit <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> AuthRememberComponent <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./auth-remember.component'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> User <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./auth-form.interface'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'auth-form'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+    &lt;div&gt;
+      &lt;form (ngSubmit)=&quot;onSubmit(form.value)&quot; #form=&quot;ngForm&quot;&gt;
+        &lt;ng-content select=&quot;h3&quot;&gt;&lt;/ng-content&gt;
+        &lt;label&gt;
+          邮箱
+          &lt;input type=&quot;email&quot; name=&quot;email&quot; ngModel&gt;
+        &lt;/label&gt;
+        &lt;label&gt;
+          密码
+          &lt;input type=&quot;password&quot; name=&quot;password&quot; ngModel&gt;
+        &lt;/label&gt;
+        &lt;ng-content select=&quot;auth-remember&quot;&gt;&lt;/ng-content&gt;
+        &lt;div *ngIf=&quot;showMessage&quot;&gt;
+          保持登录30天
+        &lt;/div&gt;
+        &lt;ng-content select=&quot;button&quot;&gt;&lt;/ng-content&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AuthFormComponent</span> <span class="token keyword">implements</span> <span class="token class-name">AfterContentInit</span> <span class="token punctuation">{</span>
+
+  showMessage<span class="token punctuation">:</span> <span class="token builtin">boolean</span><span class="token punctuation">;</span>
+
+  @<span class="token function">ContentChildren</span><span class="token punctuation">(</span>AuthRememberComponent<span class="token punctuation">)</span> remember<span class="token punctuation">:</span> QueryList<span class="token operator">&lt;</span>AuthRememberComponent<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+
+  @<span class="token function">Output</span><span class="token punctuation">(</span><span class="token punctuation">)</span> submitted<span class="token punctuation">:</span> EventEmitter<span class="token operator">&lt;</span>User<span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">EventEmitter</span><span class="token operator">&lt;</span>User<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">ngAfterContentInit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>remember<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>remember<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        item<span class="token punctuation">.</span>checked<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token punctuation">(</span>checked<span class="token punctuation">:</span> <span class="token builtin">boolean</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>showMessage <span class="token operator">=</span> checked<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>在上面的示例中，ContentChildren 装饰器返回的是一个 QueryList 集合，在 ngAfterContentInit 生命周期钩子中，我们通过 QueryList 实例提供的 forEach 方法来遍历集合中的元素。QueryList 实例除了提供 forEach() 方法之外，它还提供了数组常用的方法，比如 map()、filter()、find()、some() 和 reduce() 等方法。</p> <h4 id="ngprojectas"><a href="#ngprojectas" aria-hidden="true" class="header-anchor">#</a> ngProjectAs</h4> <p>有时候我们的定义的组件可能会包含在其它容器中，比如 <code>&lt;ng-container&gt;</code> ，这时我们的目标投影会发生什么：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ng-container</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>auth-remember</span> <span class="token attr-name">(checked)</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>rememberUser($event)<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>auth-remember</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ng-container</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>当你刷新页面的时候，你会发现 AuthRememberComponent 组件已经消失了。因为 <code>ng-container</code> 容器不再匹配 <code>select=&quot;auth-remember&quot;</code>。为了解决这个问题，我们必须使用 <code>ngProjectAs</code> 属性，它可以应用于任何元素上。使用方式如下：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ng-container</span> <span class="token attr-name">ngProjectAs</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>auth-remember<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>auth-remember</span> <span class="token attr-name">(checked)</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>rememberUser($event)<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>auth-remember</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ng-container</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>通过设置 <code>ngProjectAs</code> 属性，终于重新找回了我们的 AuthRememberComponent 组件。</p> <h3 id="总结"><a href="#总结" aria-hidden="true" class="header-anchor">#</a> 总结</h3> <p><code>&lt;ng-content&gt;</code> 不会 &quot;产生&quot; 内容，它只是投影现有的内容。你可以认为它等价于 <code>node.appendChild(el)</code>或 jQuery 中的 <code>$(node).append(el)</code> 方法：使用这些方法，节点不被克隆，它被简单地移动到它的新位置。因此，投影内容的生命周期将被绑定到它被声明的地方，而不是显示在地方。</p> <p>这种行为有两个原因：期望一致性和性能。什么 &quot;期望的一致性&quot; 意味着作为开发人员，可以基于应用程序的代码，猜测其行为。假设我写了以下代码：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>my-wrapper<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>counter</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>counter</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>很显然计数器将被实例化一次，但现在假如我们使用第三方库的组件：</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>third-party-wrapper</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>counter</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>counter</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>third-party-wrapper</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>如果第三方库能够控制 counter 组件的生命周期，我将无法知道它被实例化了多少次。其中唯一方法就是查看第三方库的代码，了解它们的内部处理逻辑。将组件的生命周期被绑定到我们的应用程序组件而不是包装器的意义是，开发者可以掌控计数器只被实例化一次，而不用了解第三方库的内部代码。</p> <p>性能的原因更为重要。<strong>因为 <code>ng-content</code> 只是移动元素，所以可以在编译时完成，而不是在运行时，这大大减少了实际应用程序的工作量</strong>。</p> <h3 id="参考资源"><a href="#参考资源" aria-hidden="true" class="header-anchor">#</a> 参考资源</h3> <ul><li><a href="https://segmentfault.com/a/1190000010730597" target="_blank" rel="noopener noreferrer">ng-content 中隐藏的内容<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://stackblitz.com/edit/ng-conf-2018-content-projection" target="_blank" rel="noopener noreferrer">ng-conf-2018-content-projection<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/angular-god-road/element/ng-template-vs-ng-container.html" class="prev">
+          Angular ng-template vs ng-container
+        </a></span> <span class="next"><a href="/angular-god-road/element/ng-content-projection-hidden-docs.html">
+          ng-content 中隐藏的内容
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/angular-god-road/assets/js/5.488dbe6d.js" defer></script><script src="/angular-god-road/assets/js/app.4eaf616f.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>@Input() | Angular 修仙之路</title>
+    <meta name="description" content="修炼 Angular、RxJS、TypeScript 秘籍">
+    
+    
+    <link rel="preload" href="/angular-god-road/assets/css/styles.4eaf616f.css" as="style"><link rel="preload" href="/angular-god-road/assets/js/app.4eaf616f.js" as="script"><link rel="preload" href="/angular-god-road/assets/js/16.b96760bb.js" as="script"><link rel="prefetch" href="/angular-god-road/assets/css/1.styles.24fddc56.css"><link rel="prefetch" href="/angular-god-road/assets/css/2.styles.a2bd3099.css"><link rel="prefetch" href="/angular-god-road/assets/js/1.24fddc56.js"><link rel="prefetch" href="/angular-god-road/assets/js/10.edd26f16.js"><link rel="prefetch" href="/angular-god-road/assets/js/11.33f54712.js"><link rel="prefetch" href="/angular-god-road/assets/js/12.fcc87fd4.js"><link rel="prefetch" href="/angular-god-road/assets/js/13.fa6e9f88.js"><link rel="prefetch" href="/angular-god-road/assets/js/14.050d9df1.js"><link rel="prefetch" href="/angular-god-road/assets/js/15.9f880834.js"><link rel="prefetch" href="/angular-god-road/assets/js/17.13fefc8b.js"><link rel="prefetch" href="/angular-god-road/assets/js/18.c850d375.js"><link rel="prefetch" href="/angular-god-road/assets/js/19.7239064a.js"><link rel="prefetch" href="/angular-god-road/assets/js/2.a2bd3099.js"><link rel="prefetch" href="/angular-god-road/assets/js/20.4125efb9.js"><link rel="prefetch" href="/angular-god-road/assets/js/21.2a9e4d33.js"><link rel="prefetch" href="/angular-god-road/assets/js/22.f2cf7fbc.js"><link rel="prefetch" href="/angular-god-road/assets/js/23.7ff8e04e.js"><link rel="prefetch" href="/angular-god-road/assets/js/24.9f44b1b7.js"><link rel="prefetch" href="/angular-god-road/assets/js/25.0ec2854a.js"><link rel="prefetch" href="/angular-god-road/assets/js/26.7c66210d.js"><link rel="prefetch" href="/angular-god-road/assets/js/27.d9097f9d.js"><link rel="prefetch" href="/angular-god-road/assets/js/28.7d96a001.js"><link rel="prefetch" href="/angular-god-road/assets/js/29.4fc02651.js"><link rel="prefetch" href="/angular-god-road/assets/js/3.3d49ed81.js"><link rel="prefetch" href="/angular-god-road/assets/js/30.99a6671a.js"><link rel="prefetch" href="/angular-god-road/assets/js/31.2591ba92.js"><link rel="prefetch" href="/angular-god-road/assets/js/32.78ddd0be.js"><link rel="prefetch" href="/angular-god-road/assets/js/33.e9af0299.js"><link rel="prefetch" href="/angular-god-road/assets/js/34.c0d5a741.js"><link rel="prefetch" href="/angular-god-road/assets/js/35.284fb844.js"><link rel="prefetch" href="/angular-god-road/assets/js/36.1cb64f86.js"><link rel="prefetch" href="/angular-god-road/assets/js/37.b69ebefc.js"><link rel="prefetch" href="/angular-god-road/assets/js/38.048dd2ef.js"><link rel="prefetch" href="/angular-god-road/assets/js/39.9e4eec87.js"><link rel="prefetch" href="/angular-god-road/assets/js/4.ff267ab9.js"><link rel="prefetch" href="/angular-god-road/assets/js/40.9610211f.js"><link rel="prefetch" href="/angular-god-road/assets/js/41.ddd45347.js"><link rel="prefetch" href="/angular-god-road/assets/js/42.d2ebe819.js"><link rel="prefetch" href="/angular-god-road/assets/js/43.e1f5311e.js"><link rel="prefetch" href="/angular-god-road/assets/js/44.b5c3267a.js"><link rel="prefetch" href="/angular-god-road/assets/js/45.b34d49e9.js"><link rel="prefetch" href="/angular-god-road/assets/js/46.3602c3b6.js"><link rel="prefetch" href="/angular-god-road/assets/js/5.488dbe6d.js"><link rel="prefetch" href="/angular-god-road/assets/js/6.1c8c7528.js"><link rel="prefetch" href="/angular-god-road/assets/js/7.fc1d55b7.js"><link rel="prefetch" href="/angular-god-road/assets/js/8.0ebf2d9c.js"><link rel="prefetch" href="/angular-god-road/assets/js/9.dacb7e8b.js">
+    <link rel="stylesheet" href="/angular-god-road/assets/css/1.styles.24fddc56.css"><link rel="stylesheet" href="/angular-god-road/assets/css/2.styles.a2bd3099.css"><link rel="stylesheet" href="/angular-god-road/assets/css/styles.4eaf616f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/angular-god-road/" class="home-link router-link-active"><!----> <span class="site-name">Angular 修仙之路</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/angular-god-road/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://semlinker.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  前端修仙之路
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/semlinker" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/angular-god-road/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://semlinker.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  前端修仙之路
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/semlinker" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading"><span>入门篇</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>工具篇</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>元素篇</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>其它</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/angular-god-road/other/ng-ctor-oninit.html" class="sidebar-link">Angular constructor vs ngOnInit</a></li><li><a href="/angular-god-road/other/ng-input-and-output.html" class="active sidebar-link">Angular Input 和 Output</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/angular-god-road/other/ng-dom-abstract.html" class="sidebar-link">Angular DOM 抽象概述</a></li><li><a href="/angular-god-road/other/ng-comp-style.html" class="sidebar-link">Angular 组件样式</a></li><li><a href="/angular-god-road/other/ng-dynamic-component.html" class="sidebar-link">Angular 动态创建组件</a></li><li><a href="/angular-god-road/other/ng-environment-variable.html" class="sidebar-link">Angular 环境变量</a></li><li><a href="/angular-god-road/other/ng-error-handler.html" class="sidebar-link">Angular 异常处理</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>RxJS</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>RxJS</span> <span class="arrow right"></span></p> <!----></div></li></ul> </div> <div class="page"> <div class="content"><p>Input 是属性装饰器，用来定义组件内的输入属性。在实际应用场合，我们主要用来实现父组件向子组件传递数据。Angular 应用是由各式各样的组件组成，当应用启动时，Angular 会从根组件开始启动，并解析整棵组件树，数据由上而下流下下一级子组件。</p> <h3 id="input"><a href="#input" aria-hidden="true" class="header-anchor">#</a> @Input()</h3> <p>counter.component.ts</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Component<span class="token punctuation">,</span> Input <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    selector<span class="token punctuation">:</span> <span class="token string">'exe-counter'</span><span class="token punctuation">,</span>
+    template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+      &lt;p&gt;当前值: {{ count }}&lt;/p&gt;
+      &lt;button (click)=&quot;increment()&quot;&gt; + &lt;/button&gt;
+      &lt;button (click)=&quot;decrement()&quot;&gt; - &lt;/button&gt;
+    `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">CounterComponent</span> <span class="token punctuation">{</span>
+    @<span class="token function">Input</span><span class="token punctuation">(</span><span class="token punctuation">)</span> count<span class="token punctuation">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token function">increment</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">decrement</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token operator">--</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>app.component.ts</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'exe-app'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+   &lt;exe-counter [count]=&quot;initialCount&quot;&gt;&lt;/exe-counter&gt;
+  `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppComponent</span> <span class="token punctuation">{</span>
+  initialCount<span class="token punctuation">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="input-bindingpropertyname"><a href="#input-bindingpropertyname" aria-hidden="true" class="header-anchor">#</a> @Input('bindingPropertyName')</h3> <p>Input 装饰器支持一个可选的参数，用来指定组件绑定属性的名称。如果没有指定，则默认使用 @Input 装饰器，装饰的属性名。具体示例如下：</p> <p>counter.component.ts</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Component<span class="token punctuation">,</span> Input <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    selector<span class="token punctuation">:</span> <span class="token string">'exe-counter'</span><span class="token punctuation">,</span>
+    template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+      &lt;p&gt;当前值: {{ count }}&lt;/p&gt;
+      &lt;button (click)=&quot;increment()&quot;&gt; + &lt;/button&gt;
+      &lt;button (click)=&quot;decrement()&quot;&gt; - &lt;/button&gt;
+    `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">CounterComponent</span> <span class="token punctuation">{</span>
+    @<span class="token function">Input</span><span class="token punctuation">(</span><span class="token string">'value'</span><span class="token punctuation">)</span> count<span class="token punctuation">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token operator">...</span> <span class="token comment">// 其余代码未改变</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>app.component.ts</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'exe-app'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+   &lt;exe-counter [value]=&quot;initialCount&quot;&gt;&lt;/exe-counter&gt;
+  `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppComponent</span> <span class="token punctuation">{</span>
+  initialCount<span class="token punctuation">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="setter-getter"><a href="#setter-getter" aria-hidden="true" class="header-anchor">#</a> setter &amp; getter</h3> <p>setter 和 getter 是用来约束属性的设置和获取，它们提供了一些属性读写的封装，可以让代码更便捷，更具可扩展性。通过 setter 和 getter 方式，我们对类中的私有属性进行了封装，能避免外界操作影响到该私有属性。此外通过 setter 我们还可以封装一些业务逻辑，具体示例如下：</p> <p>counter.component.ts</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Component<span class="token punctuation">,</span> Input <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    selector<span class="token punctuation">:</span> <span class="token string">'exe-counter'</span><span class="token punctuation">,</span>
+    template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+      &lt;p&gt;当前值: {{ count }} &lt;/p&gt;
+      &lt;button (click)=&quot;increment()&quot;&gt; + &lt;/button&gt;
+      &lt;button (click)=&quot;decrement()&quot;&gt; - &lt;/button&gt;
+    `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">CounterComponent</span> <span class="token punctuation">{</span>
+    _count<span class="token punctuation">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// 默认私有属性以下划线开头，不是必须也可以使用$count</span>
+    biggerThanTen<span class="token punctuation">:</span> <span class="token builtin">boolean</span> <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+
+    @<span class="token function">Input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">set</span> <span class="token function">count</span> <span class="token punctuation">(</span>num<span class="token punctuation">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>biggerThanTen <span class="token operator">=</span> num <span class="token operator">&gt;</span> <span class="token number">10</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>_count <span class="token operator">=</span> num<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">get</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token builtin">number</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_count<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">increment</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">decrement</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token operator">--</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="ngonchanges"><a href="#ngonchanges" aria-hidden="true" class="header-anchor">#</a> ngOnChanges</h3> <p>当数据绑定输入属性的值发生变化的时候，Angular 将会主动调用 ngOnChanges 方法。它会获得一个 SimpleChanges 对象，包含绑定属性的新值和旧值，它主要用于监测组件输入属性的变化。具体示例如下：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Component<span class="token punctuation">,</span> Input<span class="token punctuation">,</span> SimpleChanges<span class="token punctuation">,</span> OnChanges <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    selector<span class="token punctuation">:</span> <span class="token string">'exe-counter'</span><span class="token punctuation">,</span>
+    template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+      &lt;p&gt;当前值: {{ count }}&lt;/p&gt;
+      &lt;button (click)=&quot;increment()&quot;&gt; + &lt;/button&gt;
+      &lt;button (click)=&quot;decrement()&quot;&gt; - &lt;/button&gt;
+    `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">CounterComponent</span> <span class="token keyword">implements</span> <span class="token class-name">OnChanges</span><span class="token punctuation">{</span>
+    @<span class="token function">Input</span><span class="token punctuation">(</span><span class="token punctuation">)</span> count<span class="token punctuation">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token function">ngOnChanges</span><span class="token punctuation">(</span>changes<span class="token punctuation">:</span> SimpleChanges<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">dir</span><span class="token punctuation">(</span>changes<span class="token punctuation">[</span><span class="token string">'count'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">increment</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">decrement</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token operator">--</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>上面例子中需要注意的是，当手动改变输入属性的值，是不会触发 <code>ngOnChanges</code> 钩子的。</p> <hr> <p>Output 是属性装饰器，用来定义组件内的输出属性。前面我们介绍了 Input 装饰器的作用，也了解了当应用启动时，Angular 会从根组件开始启动，并解析整棵组件树，数据由上而下流下下一级子组件。而我们今天介绍的 Output 装饰器，是用来实现子组件将信息通过事件的形式通知到父级组件。</p> <p>在介绍 Output 属性装饰器前，我们先来介绍一下 <code>EventEmitter</code> 这个幕后英雄。它用来触发自定义事件，具体使用示例如下：</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">let</span> numberEmitter<span class="token punctuation">:</span> EventEmitter<span class="token operator">&lt;</span><span class="token builtin">number</span><span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">EventEmitter</span><span class="token operator">&lt;</span><span class="token builtin">number</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+numberEmitter<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token punctuation">(</span>value<span class="token punctuation">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+numberEmitter<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>在 Angular 中的 EventEmitter 应用场景是：</p> <p>子指令创建一个 EventEmitter 实例，并将其作为输出属性导出。子指令调用已创建的 EventEmitter 实例中的 emit(payload) 方法来触发一个事件，父指令通过事件绑定 <code>(eventName)</code> 的方式监听该事件，并通过 $event 对象来获取 payload 对象。是不是感觉有点抽象，我们马上实战一下。</p> <h3 id="output"><a href="#output" aria-hidden="true" class="header-anchor">#</a> @Output()</h3> <p>counter.component.ts</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Component<span class="token punctuation">,</span> Input<span class="token punctuation">,</span> Output<span class="token punctuation">,</span> EventEmitter <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    selector<span class="token punctuation">:</span> <span class="token string">'exe-counter'</span><span class="token punctuation">,</span>
+    template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+      &lt;p&gt;当前值: {{ count }}&lt;/p&gt;
+      &lt;button (click)=&quot;increment()&quot;&gt; + &lt;/button&gt;
+      &lt;button (click)=&quot;decrement()&quot;&gt; - &lt;/button&gt;
+    `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">CounterComponent</span> <span class="token punctuation">{</span>
+    @<span class="token function">Input</span><span class="token punctuation">(</span><span class="token punctuation">)</span> count<span class="token punctuation">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    @<span class="token function">Output</span><span class="token punctuation">(</span><span class="token punctuation">)</span> change<span class="token punctuation">:</span> EventEmitter<span class="token operator">&lt;</span><span class="token builtin">number</span><span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">EventEmitter</span><span class="token operator">&lt;</span><span class="token builtin">number</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">increment</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>change<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">decrement</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token operator">--</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>change<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>app.component.ts</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'exe-app'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+   &lt;p&gt;{{changeMsg}}&lt;/p&gt; 
+   &lt;exe-counter [count]=&quot;initialCount&quot; 
+    (change)=&quot;countChange($event)&quot;&gt;&lt;/exe-counter&gt;
+  `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppComponent</span> <span class="token punctuation">{</span>
+  initialCount<span class="token punctuation">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+
+  changeMsg<span class="token punctuation">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+
+  <span class="token function">countChange</span><span class="token punctuation">(</span>event<span class="token punctuation">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>changeMsg <span class="token operator">=</span> <span class="token template-string"><span class="token string">`子组件change事件已触发，当前值是: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>event<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="output-bindingpropertyname"><a href="#output-bindingpropertyname" aria-hidden="true" class="header-anchor">#</a> @Output('bindingPropertyName')</h3> <p>Output 装饰器支持一个可选的参数，用来指定组件绑定属性的名称。如果没有指定，则默认使用 @Output 装饰器，装饰的属性名。具体示例如下：</p> <p>counter.component.ts</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Component<span class="token punctuation">,</span> Input<span class="token punctuation">,</span> Output<span class="token punctuation">,</span> EventEmitter <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    selector<span class="token punctuation">:</span> <span class="token string">'exe-counter'</span><span class="token punctuation">,</span>
+    template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+      &lt;p&gt;当前值: {{ count }}&lt;/p&gt;
+      &lt;button (click)=&quot;increment()&quot;&gt; + &lt;/button&gt;
+      &lt;button (click)=&quot;decrement()&quot;&gt; - &lt;/button&gt;
+    `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">CounterComponent</span> <span class="token punctuation">{</span>
+    @<span class="token function">Input</span><span class="token punctuation">(</span><span class="token punctuation">)</span> count<span class="token punctuation">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    @<span class="token function">Output</span><span class="token punctuation">(</span><span class="token string">'countChange'</span><span class="token punctuation">)</span> change<span class="token punctuation">:</span> EventEmitter<span class="token operator">&lt;</span><span class="token builtin">number</span><span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">EventEmitter</span><span class="token operator">&lt;</span><span class="token builtin">number</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token operator">...</span> <span class="token comment">// 其余代码未改变</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>app.component.ts</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'exe-app'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+   &lt;p&gt;{{changeMsg}}&lt;/p&gt; 
+   &lt;exe-counter [count]=&quot;initialCount&quot; 
+    (countChange)=&quot;countChange($event)&quot;&gt;&lt;/exe-counter&gt;
+  `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppComponent</span> <span class="token punctuation">{</span>
+  initialCount<span class="token punctuation">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+
+  changeMsg<span class="token punctuation">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+
+  <span class="token function">countChange</span><span class="token punctuation">(</span>event<span class="token punctuation">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>changeMsg <span class="token operator">=</span> <span class="token template-string"><span class="token string">`子组件change事件已触发，当前值是: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>event<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="双向绑定"><a href="#双向绑定" aria-hidden="true" class="header-anchor">#</a> 双向绑定</h3> <p>在介绍双向绑定之前，我们先来说个需求：即在  CounterComponent 子组件 count 值发生变化的时候，需同步更新 AppComponent 父组件中的 initialCount 的值。通过上面的实例，我们知道我们可以在 AppComponent 父组件中监听 CounterComponent 子组件的 change 事件，然后在 change 事件中更新 initialCount 的值。具体示例如下：</p> <p>counter.component.ts</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Component<span class="token punctuation">,</span> Input<span class="token punctuation">,</span> Output<span class="token punctuation">,</span> EventEmitter <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    selector<span class="token punctuation">:</span> <span class="token string">'exe-counter'</span><span class="token punctuation">,</span>
+    template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+      &lt;p&gt;子组件当前值: {{ count }}&lt;/p&gt;
+      &lt;button (click)=&quot;increment()&quot;&gt; + &lt;/button&gt;
+      &lt;button (click)=&quot;decrement()&quot;&gt; - &lt;/button&gt;
+    `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">CounterComponent</span> <span class="token punctuation">{</span>
+    @<span class="token function">Input</span><span class="token punctuation">(</span><span class="token punctuation">)</span> count<span class="token punctuation">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    @<span class="token function">Output</span><span class="token punctuation">(</span><span class="token punctuation">)</span> change<span class="token punctuation">:</span> EventEmitter<span class="token operator">&lt;</span><span class="token builtin">number</span><span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">EventEmitter</span><span class="token operator">&lt;</span><span class="token builtin">number</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">increment</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>change<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">decrement</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token operator">--</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>change<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>app.component.ts</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'exe-app'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+   &lt;p&gt;父组件当前值：{{ initialCount }}&lt;/p&gt; 
+   &lt;exe-counter [count]=&quot;initialCount&quot; 
+    (change)=&quot;initialCount = $event&quot;&gt;&lt;/exe-counter&gt;
+  `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppComponent</span> <span class="token punctuation">{</span>
+  initialCount<span class="token punctuation">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>其实双向绑定是由两个单向绑定组成：</p> <ul><li>模型 -&gt; 视图数据绑定</li> <li>视图 -&gt; 模型事件绑定</li></ul> <p>Angular 中 <code>[]</code> 实现了模型到视图的数据绑定，<code>()</code> 实现了视图到模型的事件绑定。把它们两个结合在一起 <code>[()]</code> 就实现了双向绑定。也被称为 <code>banana in the box</code> 语法。</p> <h3 id="语法示例"><a href="#语法示例" aria-hidden="true" class="header-anchor">#</a> [()] 语法示例</h3> <p>counter.component.ts</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Component<span class="token punctuation">,</span> Input<span class="token punctuation">,</span> Output<span class="token punctuation">,</span> EventEmitter <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    selector<span class="token punctuation">:</span> <span class="token string">'exe-counter'</span><span class="token punctuation">,</span>
+    template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+      &lt;p&gt;子组件当前值: {{ count }}&lt;/p&gt;
+      &lt;button (click)=&quot;increment()&quot;&gt; + &lt;/button&gt;
+      &lt;button (click)=&quot;decrement()&quot;&gt; - &lt;/button&gt;
+    `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">CounterComponent</span> <span class="token punctuation">{</span>
+    @<span class="token function">Input</span><span class="token punctuation">(</span><span class="token punctuation">)</span> count<span class="token punctuation">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 输出属性名称变更： change -&gt; countChange</span>
+    @<span class="token function">Output</span><span class="token punctuation">(</span><span class="token punctuation">)</span> countChange<span class="token punctuation">:</span> EventEmitter<span class="token operator">&lt;</span><span class="token builtin">number</span><span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">EventEmitter</span><span class="token operator">&lt;</span><span class="token builtin">number</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">...</span> <span class="token comment">// 其余代码未改变</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>app.component.ts</p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'exe-app'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+   &lt;p&gt;父组件当前值：{{ initialCount }}&lt;/p&gt; 
+   &lt;exe-counter [(count)]=&quot;initialCount&quot;&gt;&lt;/exe-counter&gt;
+  `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppComponent</span> <span class="token punctuation">{</span>
+  initialCount<span class="token punctuation">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>从上面可以看出，<code>[(modelName)]</code> 可以拆分成两部分 <code>modelName</code> 和 <code>modelNameChange</code> ，<code>[modelName]</code> 用于绑定输入属性，<code>(modelNameChange)</code> 用于绑定输出属性。当 Angular 在解析模板时，遇到  <code>[(modelName)]</code> 形式的绑定语法，它会期待这个指令中会存在一个名为 <code>modelName</code> 的输入属性和一个名为 <code>modelNameChange</code> 的输出属性。</p> <h3 id="ngmodel"><a href="#ngmodel" aria-hidden="true" class="header-anchor">#</a> ngModel</h3> <p>使用过 Angular 1.x 的读者，应该很熟悉 <code>ng-model</code> 这个指令，我们通过它来实现数据的双向绑定。那么在 Angular 中有对应的指令么 ？答案是有滴，它就是 ngModel 指令。</p> <p><strong>ngModel双向绑定示例</strong></p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'exe-app'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+   &lt;p&gt;你输入的用户名是：{{ username }}&lt;/p&gt; 
+   &lt;input type=&quot;text&quot; [(ngModel)]=&quot;username&quot; /&gt;
+   `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppComponent</span> <span class="token punctuation">{</span>
+  username<span class="token punctuation">:</span> <span class="token builtin">string</span> <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><strong>ngModel表单验证示例</strong></p> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'exe-app'</span><span class="token punctuation">,</span>
+  styles<span class="token punctuation">:</span><span class="token punctuation">[</span>
+    <span class="token template-string"><span class="token string">`.error { border: 1px solid red;}`</span></span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`
+   &lt;p&gt;你输入的用户名是：{{ username }}&lt;/p&gt;
+   &lt;input type=&quot;text&quot; 
+      [(ngModel)]=&quot;username&quot; 
+      #nameModel=&quot;ngModel&quot; 
+      [ngClass]=&quot;{error: nameModel.invalid}&quot;
+      required/&gt;
+   {{nameModel.errors | json}}
+   `</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppComponent</span> <span class="token punctuation">{</span>
+  username<span class="token punctuation">:</span> <span class="token builtin">string</span> <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>以上示例利用 <code>@Directive</code> 指令 metadata 信息中的 <code>exportAs</code> 属性，获取 ngModel 实例，进行获取控件的状态，控件状态分类如下：</p> <ul><li>valid - 表单值有效</li> <li>pristine  - 表单值未改变</li> <li>dirty  - 表单值已改变</li> <li>touched - 表单已被访问过</li> <li>untouched - 表单未被访问过</li></ul></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/angular-god-road/other/ng-ctor-oninit.html" class="prev">
+          Angular constructor vs ngOnInit
+        </a></span> <span class="next"><a href="/angular-god-road/other/ng-dom-abstract.html">
+          Angular DOM 抽象概述
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/angular-god-road/assets/js/16.b96760bb.js" defer></script><script src="/angular-god-road/assets/js/app.4eaf616f.js" defer></script>
+  </body>
+</html>
